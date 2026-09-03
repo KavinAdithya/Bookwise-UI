@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
-import LookupDropdown from './LookupDropdown';
+import Lookup from './Lookup';
 import { registerUser } from '../apiservice/users/userservice';
 import { fetchAllSubscriptionPlans } from '../apiservice/subscriptions/SubscriptionService';
 
-function SigninComponent() {
+function Signin() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
@@ -98,11 +98,11 @@ function SigninComponent() {
             </div>
             <div>
                 <label>Subscription</label>
-                <LookupDropdown title="Subscription" onSelect={setSubscriptionId} values={subscriptions}/>
+                <Lookup title="Subscription" onSelect={setSubscriptionId} values={subscriptions}/>
             </div>
             <button type="submit" onClick={registerUserData}>Submit</button>
         </div>
     </>
 }
 
-export default SigninComponent;
+export default Signin;

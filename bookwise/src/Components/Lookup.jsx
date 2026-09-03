@@ -1,6 +1,5 @@
-import { useState } from "react";
 
-function LookupDropdown({title, values, onSelect}) {
+function Lookup({title, values, onSelect}) {
 
  return (
     <select onChange={(event) => onSelect(event.target.value)}>
@@ -22,4 +21,4 @@ function LookupDropdown({title, values, onSelect}) {
   );
 }
 
-export default LookupDropdown;
+export default Lookup;

@@ -51,4 +51,27 @@ const apiClient = axios.create({
 //     }
 // );
 
+apiClient.interceptors.response.use(
+    (response) => {
+        return response;
+    },
+    (error) => {
+
+        if (error.response) {
+
+            const status = error.response.status;
+            const message = error.response.data?.message;
+
+            console.log("Backend error:", status, message);
+
+            alert(message || "Something went wrong");
+
+        } else {
+            alert("Unable to connect to server");
+        }
+
+        return Promise.reject(error);
+    }
+);
+
 export default apiClient;

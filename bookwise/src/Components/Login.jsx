@@ -1,4 +1,4 @@
-function LoginComponent() {
+function Login() {
     return <>
         <form>
             <h3>Log in</h3>
@@ -15,4 +15,4 @@ function LoginComponent() {
     </>
 }
 
-export default LoginComponent;
+export default Login;
