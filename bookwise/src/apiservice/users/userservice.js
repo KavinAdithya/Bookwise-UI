@@ -7,3 +7,7 @@ export function registerUser(userData) {
                     userData
                 )
 }
+
+export function authenitcateUser(userCredential) {
+    return apiClient.post("/users/login", userCredential)
+}
