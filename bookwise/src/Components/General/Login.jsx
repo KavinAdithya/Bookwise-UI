@@ -1,11 +1,13 @@
 import { useContext, useState } from "react";
-import { authenitcateUser } from "../apiservice/users/userservice";
+import { authenitcateUser } from "../../apiservice/users/userservice";
 import { AuthContext } from "./AuthProvider";
+import { useNavigate } from "react-router-dom";
 
 function Login() {
     const [username, setUsername] = useState("Techcrack")
-    const [password, setPassword] = useState();
+    const [password, setPassword] = useState("");
     const {login} = useContext(AuthContext)
+    const navigate = useNavigate()
 
     async function authenticate() {
         const credential = {
@@ -15,7 +17,9 @@ function Login() {
 
         const response = await authenitcateUser(credential)
         
-        login(response.data.data.token)
+        login(response.data.data)
+        
+        navigate("/welcome")
     }
 
     return <>

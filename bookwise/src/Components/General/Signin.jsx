@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import Lookup from './Lookup';
-import { registerUser } from '../apiservice/users/userservice';
-import { fetchAllSubscriptionPlans } from '../apiservice/subscriptions/SubscriptionService';
+import { registerUser } from '../../apiservice/users/userservice';
+import { fetchAllSubscriptionPlans } from '../../apiservice/subscriptions/SubscriptionService';
 
 function Signin() {
     const [name, setName] = useState("")
