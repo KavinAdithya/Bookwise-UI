@@ -19,7 +19,7 @@ function Login() {
         
         login(response.data.data)
         
-        navigate("/welcome")
+        navigate("/home")
     }
 
     return <>

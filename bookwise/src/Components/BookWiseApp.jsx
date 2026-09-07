@@ -1,13 +1,13 @@
-import Signin from './General/Signin';
+import Register from './General/Register';
 import Login from './General/Login'
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
 import Layout from "./General/Layout";
 import AuthProvider from "./General/AuthProvider";
-import Logout from "./General/Logout";
 import NotFound from "./General/NotFound"
 import UnAuthorized from './General/UnAuthorized'
-import Welcome from './Users/Welcome'
+import Welcome from './Welcome'
 import AuthorizationRoute from './General/AuthorizationRoute';
+import UserHome from './Users/UserHome';
 
 function BookWiseApp() {
     return <>
@@ -19,18 +19,20 @@ function BookWiseApp() {
                             path="/login" 
                             element={<Login/>}/>
                         <Route 
-                            path="/logout" 
-                            element={<Logout/>}/>
-                        <Route 
-                            path="/signin" 
-                            element={<Signin/>}/>
+                            path="/register" 
+                            element={<Register/>}/>
                         <Route
-                            path='/welcome'
+                            path='/home'
                             element={
                             <AuthorizationRoute
                                     allowedRoles={["USER"]}>
-                                <Welcome/>
+                                <UserHome/>
                             </AuthorizationRoute>
+                            }/>
+                        <Route
+                            path='/'
+                            element={
+                                <Welcome/>
                             }/>
                         <Route 
                             path="/unauthorized" 

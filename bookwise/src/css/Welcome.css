@@ -1,0 +1,152 @@
+.welcome-page {
+    width: 100%;
+}
+
+
+/* HERO */
+
+.welcome-hero {
+    min-height: 550px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 60px 10%;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.hero-label {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.hero-content h1 {
+    font-size: 58px;
+    line-height: 1.1;
+    margin: 20px 0;
+}
+
+.hero-content h1 span {
+    display: block;
+}
+
+.hero-description {
+    font-size: 18px;
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.primary-button,
+.secondary-button {
+    padding: 12px 22px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.primary-button {
+    background: #222;
+    color: white;
+}
+
+.secondary-button {
+    border: 1px solid #222;
+    color: #222;
+}
+
+.hero-image {
+    font-size: 180px;
+}
+
+
+/* FEATURES */
+
+.features-section {
+    padding: 80px 10%;
+    text-align: center;
+}
+
+.features-section h2 {
+    font-size: 36px;
+}
+
+.section-description {
+    margin-bottom: 45px;
+}
+
+.features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+}
+
+.feature-card {
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    text-align: left;
+}
+
+.feature-icon {
+    font-size: 35px;
+}
+
+.feature-card h3 {
+    margin-top: 15px;
+}
+
+.feature-card p {
+    line-height: 1.5;
+}
+
+
+/* AUTHOR */
+
+.author-section {
+    padding: 80px 10%;
+
+    display: flex;
+    align-items: center;
+
+    min-height: 300px;
+}
+
+.author-section div {
+    max-width: 600px;
+}
+
+.author-section h2 {
+    font-size: 38px;
+}
+
+.author-section p {
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+
+/* CTA */
+
+.welcome-cta {
+    text-align: center;
+    padding: 90px 20px;
+}
+
+.welcome-cta h2 {
+    font-size: 40px;
+}
+
+.welcome-cta p {
+    margin-bottom: 30px;
+}

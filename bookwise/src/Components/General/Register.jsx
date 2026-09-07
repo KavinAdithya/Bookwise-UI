@@ -2,8 +2,9 @@ import { useEffect, useState } from 'react';
 import Lookup from './Lookup';
 import { registerUser } from '../../apiservice/users/userservice';
 import { fetchAllSubscriptionPlans } from '../../apiservice/subscriptions/SubscriptionService';
+import RoleToggle from './RoleToggle';
 
-function Signin() {
+function Register() {
     const [name, setName] = useState("")
     const [email, setEmail] = useState("")
     const [username, setUsername] = useState("")
@@ -12,6 +13,8 @@ function Signin() {
     const [address, setAddress] = useState("")
     const [subscriptionId, setSubscriptionId] = useState()
     const [subscriptions, setSubscriptions] = useState([])
+
+    const [role, setRole] = useState("USER")
 
     useEffect(() => {
     fetchAllSubscriptionPlans()
@@ -100,9 +103,12 @@ function Signin() {
                 <label>Subscription</label>
                 <Lookup title="Subscription" onSelect={setSubscriptionId} values={subscriptions}/>
             </div>
+            <RoleToggle 
+                role={role} 
+                setRole={setRole}/>
             <button type="submit" onClick={registerUserData}>Submit</button>
         </div>
     </>
 }
 
-export default Signin;
+export default Register;

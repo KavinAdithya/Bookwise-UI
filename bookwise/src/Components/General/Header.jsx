@@ -1,72 +1,46 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
+import Navigation from "./Navigation";
+import Logo from './Logo';
+
 
 function Header() {
-    const {isAuthenticated, user} = useContext(AuthContext)
-    const isAdmin = user.role == "ADMIN";
-    const isAuthor = user.role == "AUTHOR";
-    const isUser = user.role == "USER";
+    const {user, logout, isAuthenticated} = useContext(AuthContext)
+    const navigate = useNavigate()
 
-        return (
+    function loginNavigate() {
+        navigate("/login")
+    }
+
+    return (
         <header className="header">
 
-            {/* Logo */}
-            <div className="header-logo">
-                <Link to="/home">📚 BookWise</Link>
-            </div>
+            <Logo/>
+            <Navigation/>
 
-            {/* Navigation */}
-            <nav className="header-nav">
-
-                <Link to="/home">Home</Link>
-
-                {isUser && (
-                    <>
-                        <Link to="/books">Books</Link>
-                        <Link to="/history">History</Link>
-                        <Link to="/subscription">
-                            Subscription
-                        </Link>
-                    </>
-                )}
-
-                {isAuthor && (
-                    <>
-                        <Link to="/author/books">
-                            My Books
-                        </Link>
-                        <Link to="/author/revenue">
-                            Revenue
-                        </Link>
-                    </>
-                )}
-
-                {isAdmin && (
-                    <>
-                        <Link to="/admin/users">
-                            Users
-                        </Link>
-                        <Link to="/admin/authors">
-                            Authors
-                        </Link>
-                    </>
-                )}
-
-            </nav>
-
-            {/* Right side */}
             <div className="header-right">
+            {
+                !isAuthenticated &&
+                <>
+                    <button onClick={loginNavigate}>
+                        Login
+                    </button>
+                </>
+            }
 
-                <span className="username">
-                    {user?.name}
-                </span>
-
-                <button>
-                    <Link to="/logout">Logout</Link>
-                </button>
-
-            </div>
+            { isAuthenticated &&
+                <>
+                    <span className="username">
+                        {user?.name}
+                    </span>
+                    <button onClick={logout}>
+                        Logout
+                    </button>
+                </>
+            } 
+            
+            </div>  
 
         </header>
     );
