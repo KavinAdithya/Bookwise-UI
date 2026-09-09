@@ -5,19 +5,19 @@ const apiClient = axios.create({
     timeout: 10000
 });
 
-// apiClient.interceptors.request.use(config => {
+apiClient.interceptors.request.use(config => {
 
-//     const token =
-//         localStorage.getItem("token");
+    const token =
+        localStorage.getItem("token");
 
-//     if(config.url !== "/login" && token) {
+    if(config.url !== "/login" && token) {
 
-//         config.headers.Authorization =
-//             `Bearer ${token}`;
-//     }
+        config.headers.Authorization =
+            `Bearer ${token}`;
+    }
 
-//     return config;
-// });
+    return config;
+});
 
 // apiClient.interceptors.response.use(
 

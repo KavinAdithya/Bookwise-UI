@@ -8,6 +8,7 @@ import UnAuthorized from './General/UnAuthorized'
 import Welcome from './Welcome'
 import AuthorizationRoute from './General/AuthorizationRoute';
 import UserHome from './Users/UserHome';
+import BookRegistration from './Author/BookRegistration';
 
 function BookWiseApp() {
     return <>
@@ -34,6 +35,9 @@ function BookWiseApp() {
                             element={
                                 <Welcome/>
                             }/>
+                        <Route
+                            path='/books/register'
+                            element={<BookRegistration/>}/>
                         <Route 
                             path="/unauthorized" 
                             element={<UnAuthorized/>}/>
