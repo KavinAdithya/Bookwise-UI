@@ -1,13 +1,16 @@
 import { useState } from "react";
-import apiClient from "../../api/apiClient";
 import "../../css/Author/BookRegistration.css";
+import { useEffect } from "react";
+import {fetchCategoriesChoice} from "../../apiservice/categories/Category";
+import Lookup from "../General/Lookup";
+import { registerBook } from "../../apiservice/books/Book";
 
 function BookRegistration() {
 
     const [title, setTitle] = useState("");
     const [ISBN, setISBN] = useState("");
     const [description, setDescription] = useState("");
-    const [categoryName, setCategoryName] = useState("");
+    const [categoryId, setCategoryId] = useState();
     const [language, setLanguage] = useState("");
     const [totalCopies, setTotalCopies] = useState("");
     const [availableCopies, setAvailableCopies] = useState("");
@@ -15,8 +18,18 @@ function BookRegistration() {
     const [borrowFee, setBorrowFee] = useState("");
 
     const [coverImage, setCoverImage] = useState(null);
+    const [categories, setCategories] = useState([]);
 
-    const [message, setMessage] = useState("");
+
+    useEffect(() => async function fetchCategories() {
+        await fetchCategoriesChoice()
+            .then((response) => {
+                setCategories(response.data.data);
+            })
+            .catch((error) => {
+                console.error("Error fetching categories:", error);
+            });
+    }, []);
 
     const handleImageChange = (event) => {
         setCoverImage(event.target.files[0]);
@@ -26,11 +39,13 @@ function BookRegistration() {
 
         event.preventDefault();
 
+        debugger;
+
         const book = {
             title,
             ISBN,
             description,
-            categoryName,
+            categoryName : categories[categoryId].name,
             language,
             totalCopies: Number(totalCopies),
             availableCopies: Number(availableCopies),
@@ -52,27 +67,15 @@ function BookRegistration() {
 
         formData.append("coverImage", coverImage);
 
-        try {
+        await registerBook(formData)
+            .then((response) => {
+                alert("Book registered successfully!");
+                console.log("Book registered successfully:", response.data)
+            })
+            .catch((error) => {
+                console.error("Error registering book:", error);
+            });
 
-            const response = await apiClient.post(
-                "/books/register",
-                formData
-            );
-
-            setMessage(
-                response.data.message ||
-                "Book registered successfully"
-            );
-
-        } catch (error) {
-
-            console.error(error);
-
-            setMessage(
-                error.response?.data?.message ||
-                "Failed to register book"
-            );
-        }
     };
 
     return (
@@ -136,16 +139,11 @@ function BookRegistration() {
 
                 {/* Category */}
                 <div className="form-group">
-                    <label>Category</label>
-
-                    <input
-                        type="text"
-                        value={categoryName}
-                        onChange={(e) =>
-                            setCategoryName(e.target.value)
-                        }
-                        placeholder="Enter category"
-                        required
+                    
+                    <Lookup
+                        title="Select Category"
+                        values={categories}
+                        onSelect={setCategoryId}
                     />
                 </div>
 
@@ -265,13 +263,6 @@ function BookRegistration() {
                 </button>
 
             </form>
-
-
-            {message && (
-                <p className="form-message">
-                    {message}
-                </p>
-            )}
 
         </div>
     );
