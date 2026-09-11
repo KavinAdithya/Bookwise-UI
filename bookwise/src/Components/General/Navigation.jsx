@@ -4,17 +4,20 @@ import { useContext } from "react";
 
 const navigation = {
     USER: [
+        { label: "Home", path: "/home"},
         { label: "Books", path: "/books" },
         { label: "History", path: "/history" },
         { label: "Subscription", path: "/subscription" }
     ],
 
     AUTHOR: [
+        { label: "Home", path: "/author/home"},
         { label: "My Books", path: "/author/books" },
         { label: "Revenue", path: "/author/revenue" }
     ],
 
     ADMIN: [
+        { label: "Home", path: "/admin/home"},
         { label: "Users", path: "/admin/users" },
         { label: "Authors", path: "/admin/authors" }
     ]
@@ -29,8 +32,6 @@ function Navigation() {
 
     return (
         <nav className="header-nav">
-
-            <Link to="/home">Home</Link>
 
             {links.map((link) => (
                 <Link

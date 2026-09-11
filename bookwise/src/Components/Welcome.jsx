@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
 import "../css/Welcome.css"
+import { AuthContext } from "./General/AuthProvider";
+import { useContext } from "react";
 
 function Welcome() {
+    const {isAuthenticated} = useContext(AuthContext);
     return (
         <div className="welcome-page">
 
@@ -28,10 +31,11 @@ function Welcome() {
                         <Link to="/books" className="primary-button">
                             Explore Books
                         </Link>
-
-                        <Link to="/login" className="secondary-button">
-                            Sign In
-                        </Link>
+                        {!isAuthenticated && 
+                            <Link to="/login" className="secondary-button">
+                                Sign In
+                            </Link>
+                        }
                     </div>
 
                 </div>

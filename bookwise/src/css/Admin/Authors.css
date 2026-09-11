@@ -1,0 +1,168 @@
+/* Main Container */
+.author-requests {
+    padding: 30px;
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+
+/* Page Header */
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin: 0;
+    font-size: 28px;
+    color: #222;
+}
+
+.page-header p {
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 15px;
+}
+
+
+/* Toolbar */
+.request-toolbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    gap: 20px;
+}
+
+
+/* Search */
+.request-toolbar input {
+    width: 350px;
+    padding: 11px 14px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    box-sizing: border-box;
+}
+
+.request-toolbar input:focus {
+    border-color: #555;
+}
+
+
+/* Status Filters */
+.status-filters {
+    display: flex;
+    gap: 8px;
+}
+
+.status-filters button {
+    padding: 10px 16px;
+    border: 1px solid #ddd;
+    background-color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.status-filters button:hover {
+    background-color: #f1f1f1;
+}
+
+
+/* Author Table */
+.author-table {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+
+/* Table Row */
+.table-row {
+    display: grid;
+    grid-template-columns: 1.2fr 2fr 1fr 1fr 1fr;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* Remove border from last row */
+.table-row:last-child {
+    border-bottom: none;
+}
+
+
+/* Table Header */
+.table-header {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #444;
+    min-height: 50px;
+}
+
+
+/* Table Data */
+.table-row > div {
+    font-size: 14px;
+    color: #333;
+}
+
+
+/* Status Badge */
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* Pending */
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+
+/* Approved */
+.status.approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+
+/* Review Button */
+.review-btn {
+    padding: 7px 14px;
+    border: none;
+    border-radius: 5px;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.review-btn:hover {
+    background-color: #111;
+}
+
+
+/* View Button */
+.view-btn {
+    padding: 7px 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    color: #333;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.view-btn:hover {
+    background-color: #f2f2f2;
+}

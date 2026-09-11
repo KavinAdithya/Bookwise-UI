@@ -9,6 +9,9 @@ import Welcome from './Welcome'
 import AuthorizationRoute from './General/AuthorizationRoute';
 import UserHome from './Users/UserHome';
 import BookRegistration from './Author/BookRegistration';
+import AuthorHome from './Author/AuthorHome';
+import AdminHome from './Admin/AdminHome';
+import Authors from './Admin/Authors';
 
 function BookWiseApp() {
     return <>
@@ -16,12 +19,19 @@ function BookWiseApp() {
             <BrowserRouter>
                 <Routes>
                     <Route element={<Layout/>}>
+                        {/* Public Routes */}
                         <Route 
                             path="/login" 
                             element={<Login/>}/>
                         <Route 
                             path="/register" 
                             element={<Register/>}/>
+                        <Route
+                            path='/'
+                            element={
+                                <Welcome/>
+                            }/>
+                        {/* User Routes */}
                         <Route
                             path='/home'
                             element={
@@ -30,20 +40,46 @@ function BookWiseApp() {
                                 <UserHome/>
                             </AuthorizationRoute>
                             }/>
+                        
+                        {/* Author Routes */}
                         <Route
-                            path='/'
+                            path='/author/home'
                             element={
-                                <Welcome/>
+                                <AuthorizationRoute
+                                    allowedRoles={["AUTHOR"]}>
+                                    <AuthorHome/>
+                                </AuthorizationRoute>
                             }/>
                         <Route
-                            path='/books/register'
+                            path='/author/books/register'
                             element={<BookRegistration/>}/>
+
+                        {/* Admin Routes */}
+                        <Route
+                            path='/admin/home'
+                            element={
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <Authors/>
+                                </AuthorizationRoute>
+                            }/>
+                        <Route 
+                            path='/admin/authors'
+                            element={
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <AdminHome/>
+                                </AuthorizationRoute>
+                            }/>
+
+                        {/* Authorization Routes */}
                         <Route 
                             path="/unauthorized" 
                             element={<UnAuthorized/>}/>
                         <Route 
                             path="*" 
                             element={<NotFound/>}/>
+                            
                     </Route>
                 </Routes>
             </BrowserRouter>

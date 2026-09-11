@@ -18,8 +18,18 @@ function Login() {
         const response = await authenitcateUser(credential)
         
         login(response.data.data)
+
+        const role = response.data.data.role
         
-        navigate("/home")
+        if (role === "USER") {
+            navigate("/home")
+        } else if (role === "AUTHOR") {
+            navigate("/author/home")
+        } else if (role === "ADMIN") {
+            navigate("/admin/home")
+        } else {
+            navigate("/unauthorized")
+        }
     }
 
     return <>
