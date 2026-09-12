@@ -1,10 +1,16 @@
 import {getAllAuthors} from '../../apiservice/authors/AuthorService';
 import { useEffect, useState } from 'react';
 import '../../css/Admin/Authors.css';
+import { useNavigate } from 'react-router-dom';
 
 function Authors() {
     const [authors, setAuthors] = useState([]);
+    const navigate = useNavigate();
     
+    function handleView(author) {
+        navigate(`/admin/authors/review/${author.id}`);
+    }
+
     useEffect(() => {
         async function fetchAuthors() {
             try {   
@@ -52,7 +58,7 @@ function Authors() {
                     <div className="table-row" key={author.id}>
                         <div>{author.authorName}</div>
                         <div>{author.email}</div>
-                        <div>{author.submittedOn}</div>
+                        <div>{author.createdAt.split("T")[0]}</div>
 
                         <div>
                             <span className={`status ${author.status.toLowerCase()}`}>
@@ -64,7 +70,7 @@ function Authors() {
                             {author.status === "PENDING" ? (
                                 <button
                                     className="review-btn"
-                                    onClick={() => handleReview(author)}
+                                    onClick={() => handleView(author)}
                                 >
                                     Review
                                 </button>

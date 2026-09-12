@@ -1,0 +1,154 @@
+.author-detail-page {
+    min-height: 100vh;
+    padding: 30px;
+    background-color: #f8f9fa;
+    box-sizing: border-box;
+}
+
+.author-detail-card {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+
+/* Header */
+
+.author-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.author-detail-header h1 {
+    margin: 0;
+    font-size: 26px;
+    color: #222;
+}
+
+.author-detail-header p {
+    margin: 7px 0 0;
+    color: #777;
+    font-size: 14px;
+}
+
+
+/* Status */
+
+.status {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.approved {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.status.rejected {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+
+/* Information */
+
+.author-info {
+    padding-top: 25px;
+}
+
+.author-info h2 {
+    margin: 0 0 20px;
+    font-size: 18px;
+    color: #333;
+}
+
+
+/* Grid */
+
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px 30px;
+}
+
+.info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.info-item label {
+    font-size: 12px;
+    color: #888;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.info-item p {
+    margin: 0;
+    font-size: 15px;
+    color: #333;
+}
+
+.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* Actions */
+
+.author-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.author-actions button {
+    padding: 10px 22px;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+/* Reject */
+
+.reject-btn {
+    border: 1px solid #dc3545;
+    background-color: white;
+    color: #dc3545;
+}
+
+.reject-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+
+/* Approve */
+
+.approve-btn {
+    border: 1px solid #198754;
+    background-color: #198754;
+    color: white;
+}
+
+.approve-btn:hover {
+    background-color: #157347;
+}
