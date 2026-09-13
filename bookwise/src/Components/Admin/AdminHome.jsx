@@ -1,8 +1,30 @@
+import { useContext, useState, useEffect } from 'react';
 import '../../css/Admin/AdminHome.css';
 import { useNavigate } from 'react-router-dom';
+import {AuthContext} from '../General/AuthProvider'
+import { getAuthorByStatus } from '../../apiservice/authors/AuthorService';
 
 function AdminHome() {
     const navigate = useNavigate();
+    const {user} = useContext(AuthContext)
+
+    const [authors, setAuthors] = useState([]);
+        
+    
+        useEffect(() => {
+            async function fetchPendingAuthors() {
+                try {   
+                    const response = await getAuthorByStatus("PENDING");
+                    setAuthors(response.data.data);
+                }   catch (error) { 
+                    console.error("Error fetching authors:", error);
+                }   
+            }
+            fetchPendingAuthors();
+        }, []);
+    
+    if (!authors)
+        return <div>Loading...</div>
 
     return (
         <div className="admin-home">
@@ -13,7 +35,7 @@ function AdminHome() {
         <div>
             <p>BOOKWISE ADMIN</p>
 
-            <h1>Welcome back, Admin 👋</h1>
+            <h1>Welcome back, {user?.name} Admin 👋</h1>
 
             <p>
                 Manage users, authors, books, subscriptions,
@@ -78,49 +100,29 @@ function AdminHome() {
 
         <div className="request-list">
 
-            <div className="request-card">
+                <div className="author-table">
 
-                <div>
-                    <h3>John David</h3>
-                    <p>john@example.com</p>
+                    <div className="table-row1 table-header1">
+                        <div>Author</div>
+                        <div>Email</div>
+                        <div>Submitted On</div>
+                        <div>Status</div>
+                    </div>
+
+                    {authors.map((author) => (
+                        <div className="table-row1" key={author.id}>
+                            <div>{author.authorName}</div>
+                            <div>{author.email}</div>
+                            <div>{author.createdAt.split("T")[0]}</div>
+
+                            <div>
+                                <span className={`status ${author.status.toLowerCase()}`}>
+                                    {author.status}
+                                </span>
+                            </div>
+                        </div>
+                    ))}
                 </div>
-
-                <span className="status pending">
-                    Pending
-                </span>
-
-                <button
-                    onClick={() =>
-                        navigate("/admin/authors")
-                    }
-                >
-                    Review
-                </button>
-
-            </div>
-
-
-            <div className="request-card">
-
-                <div>
-                    <h3>David Kumar</h3>
-                    <p>david@example.com</p>
-                </div>
-
-                <span className="status pending">
-                    Pending
-                </span>
-
-                <button
-                    onClick={() =>
-                        navigate("/admin/authors")
-                    }
-                >
-                    Review
-                </button>
-
-            </div>
-
         </div>
 
     </section>

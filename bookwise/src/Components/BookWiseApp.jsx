@@ -13,6 +13,7 @@ import AuthorHome from './Author/AuthorHome';
 import AdminHome from './Admin/AdminHome';
 import Authors from './Admin/Authors';
 import AuthorDetailView from './Admin/AuthorDetailView';
+import AuthorBooks from './Author/AuthorBooks';
 
 function BookWiseApp() {
     return <>
@@ -53,7 +54,20 @@ function BookWiseApp() {
                             }/>
                         <Route
                             path='/author/books/register'
-                            element={<BookRegistration/>}/>
+                            element={
+                                <AuthorizationRoute
+                                    allowedRoles={["AUTHOR"]}>
+                                        <BookRegistration/>
+                                    </AuthorizationRoute>
+                                }/>
+                        <Route
+                            path='/author/books'
+                            element={
+                                <AuthorizationRoute
+                                    allowedRoles={["AUTHOR"]}>
+                                        <AuthorBooks/>
+                                </AuthorizationRoute>
+                                }/>
 
                         {/* Admin Routes */}
                         <Route

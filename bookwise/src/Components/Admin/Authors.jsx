@@ -1,4 +1,4 @@
-import {getAllAuthors} from '../../apiservice/authors/AuthorService';
+import {getAllAuthors, getAuthorByStatus} from '../../apiservice/authors/AuthorService';
 import { useEffect, useState } from 'react';
 import '../../css/Admin/Authors.css';
 import { useNavigate } from 'react-router-dom';
@@ -11,17 +11,27 @@ function Authors() {
         navigate(`/admin/authors/review/${author.id}`);
     }
 
+    async function fetchAuthors() {
+        try {   
+            const response = await getAllAuthors();
+            setAuthors(response.data.data);
+        }   catch (error) { 
+            console.error("Error fetching authors:", error);
+        }   
+    }
+
     useEffect(() => {
-        async function fetchAuthors() {
-            try {   
-                const response = await getAllAuthors();
-                setAuthors(response.data.data);
-            }   catch (error) { 
-                console.error("Error fetching authors:", error);
-            }   
-        }
         fetchAuthors();
     }, []);
+
+    async function filterByStatus(status) {
+         try {   
+            const response = await getAuthorByStatus(status);
+            setAuthors(response.data.data);
+        }   catch (error) { 
+            console.error("Error fetching authors:", error);
+        } 
+    }
 
     return (
         <div className="author-requests">
@@ -38,9 +48,9 @@ function Authors() {
                 />
 
                 <div className="status-filters">
-                    <button>All</button>
-                    <button>Pending</button>
-                    <button>Approved</button>
+                    <button onClick={fetchAuthors}>All</button>
+                    <button onClick={() => filterByStatus("PENDING")}>Pending</button>
+                    <button onClick={() => filterByStatus("APPROVED")}>Approved</button>
                 </div>
             </div>
 

@@ -19,3 +19,11 @@ export function approveAuthor(authorId) {
 export function rejectAuthor(authorId) {
     return apiClient.patch(`/authors/reject`, { authorIds : [authorId] });
 }
+
+export function getAuthorByStatus(status) {
+    return apiClient.get('/authors/filter',  {
+    params: {
+        status: status
+    }
+});
+}

@@ -391,3 +391,29 @@
         gap: 20px;
     }
 }
+
+/* Author Table */
+.author-table1 {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    overflow: hidden;
+} 
+
+/* Table Row*/
+.table-row1 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: center;
+    min-height: 60px;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+/* Table Header */
+.table-header1 {
+    background-color: #f5f5f5;
+    font-weight: 600;
+    color: #444;
+    min-height: 50px;
+} 
