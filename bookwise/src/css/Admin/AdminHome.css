@@ -417,3 +417,9 @@
     color: #444;
     min-height: 50px;
 } 
+
+.home-page {
+    min-height: 100vh;
+    background-color: #F7F5F0;
+    color: #1F2933;
+}

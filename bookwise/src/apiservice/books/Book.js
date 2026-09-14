@@ -8,3 +8,7 @@ export function registerBook(formData) {
 export function fetchAllAuthorBooks() {
     return apiClient.get("/books/author");
 }
+
+export function fetchBook(id) {
+    return apiClient.get(`/books/author/book/${id}`)
+}

@@ -339,3 +339,9 @@
         gap: 20px;
     }
 }
+
+.home-page {
+    min-height: 100vh;
+    background-color: #F7F5F0;
+    color: #1F2933;
+}

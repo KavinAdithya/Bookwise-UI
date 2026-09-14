@@ -1,4 +1,4 @@
-import apiClient from "../../api/ApiClient";
+import apiClient from "../../api/apiClient";
 
 export function registerAuthor(authorData) {
     return apiClient.post('/authors/register', authorData)

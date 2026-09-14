@@ -18,6 +18,10 @@ function AuthorBooks() {
 
     useEffect(() => {fetchAuthorAllBooks()}, [])
 
+    function handleViewBook(bookId) {
+        navigate(`/author/book/${bookId}`)
+    }
+
     // if (!books)
     //     return <div>Loading...</div>
     
@@ -143,7 +147,7 @@ function AuthorBooks() {
                         <div>
                             <button
                                 className="view-book-btn"
-                                // onClick={() => handleViewBook(book.id)}
+                                onClick={() => handleViewBook(book.id)}
                             >
                                 View
                             </button>
