@@ -74,14 +74,14 @@ function AuthorHome() {
         <div className="book-list">
 
             <div className="author-book">
-                <div className="book-cover">
+                <div className="author-book-cover">
                     📘
                 </div>
 
                 <div className="book-details">
                     <h3>Java Fundamentals</h3>
                     <p>Technology</p>
-                    <span className="status published">
+                    <span className="author-status published">
                         Published
                     </span>
                 </div>
@@ -89,14 +89,14 @@ function AuthorHome() {
 
 
             <div className="author-book">
-                <div className="book-cover">
+                <div className="author-book-cover">
                     📗
                 </div>
 
                 <div className="book-details">
                     <h3>Spring Boot Guide</h3>
                     <p>Technology</p>
-                    <span className="status published">
+                    <span className="author-status published">
                         Published
                     </span>
                 </div>
@@ -104,14 +104,14 @@ function AuthorHome() {
 
 
             <div className="author-book">
-                <div className="book-cover">
+                <div className="author-book-cover">
                     📕
                 </div>
 
                 <div className="book-details">
                     <h3>Advanced Java</h3>
                     <p>Programming</p>
-                    <span className="status pending">
+                    <span className="author-status pending">
                         Pending Approval
                     </span>
                 </div>

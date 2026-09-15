@@ -1,0 +1,144 @@
+/* =========================
+   Not Found Page
+========================= */
+
+.not-found-page {
+    min-height: calc(100vh - 68px);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 40px 20px;
+
+    background-color: #F7F5F0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   Card
+========================= */
+
+.not-found-card {
+    width: 100%;
+    max-width: 500px;
+
+    padding: 50px 40px;
+
+    text-align: center;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 12px;
+
+    box-shadow: 0 8px 24px rgba(23, 59, 77, 0.07);
+
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   404
+========================= */
+
+.not-found-code {
+    margin-bottom: 10px;
+
+    color: #173B4D;
+
+    font-size: 72px;
+    font-weight: 700;
+
+    line-height: 1;
+    letter-spacing: -2px;
+}
+
+
+/* =========================
+   Heading
+========================= */
+
+.not-found-card h1 {
+    margin: 15px 0 10px;
+
+    color: #1F2933;
+
+    font-size: 26px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Description
+========================= */
+
+.not-found-card p {
+    max-width: 380px;
+
+    margin: 0 auto 28px;
+
+    color: #6B7280;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Button
+========================= */
+
+.not-found-home-btn {
+    padding: 11px 20px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #173B4D;
+    color: #FFFFFF;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.not-found-home-btn:hover {
+    background-color: #0F2D3B;
+    transform: translateY(-1px);
+}
+
+.not-found-home-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 500px) {
+
+    .not-found-page {
+        padding: 25px 15px;
+    }
+
+    .not-found-card {
+        padding: 40px 25px;
+    }
+
+    .not-found-code {
+        font-size: 60px;
+    }
+
+    .not-found-card h1 {
+        font-size: 23px;
+    }
+}

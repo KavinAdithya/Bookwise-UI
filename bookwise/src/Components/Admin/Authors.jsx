@@ -48,9 +48,17 @@ function Authors() {
                 />
 
                 <div className="status-filters">
-                    <button onClick={fetchAuthors}>All</button>
-                    <button onClick={() => filterByStatus("PENDING")}>Pending</button>
-                    <button onClick={() => filterByStatus("APPROVED")}>Approved</button>
+                    <button className={status === "ALL" ? "active" : ""} onClick={fetchAuthors}>
+                        All
+                    </button>
+
+                    <button className={status === "PENDING" ? "active" : ""} onClick={() => filterByStatus("PENDING")}>
+                        Pending
+                    </button>
+
+                    <button className={status === "APPROVED" ? "active" : ""} onClick={() => filterByStatus("APPROVED")}>
+                        Approved
+                    </button>
                 </div>
             </div>
 

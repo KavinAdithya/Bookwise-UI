@@ -1,24 +1,26 @@
+import "../../css/General/Lookup.css";
 
-function Lookup({title, values, onSelect}) {
+function Lookup({ title, values, onSelect }) {
 
- return (
-    <select onChange={(event) => onSelect(event.target.value)}>
-
-      <option value="">
-        Select {title}
-      </option>
-
-      {values.map((value) => (
-        <option
-          key={value.id}
-          value={value.id}
+    return (
+        <select
+            className="lookup-select"
+            onChange={(event) => onSelect(event.target.value)}
         >
-          {value.name}
-        </option>
-      ))}
+            <option value="">
+                Select {title}
+            </option>
 
-    </select>
-  );
+            {values.map((value) => (
+                <option
+                    key={value.id}
+                    value={value.id}
+                >
+                    {value.name}
+                </option>
+            ))}
+        </select>
+    );
 }
 
 export default Lookup;

@@ -1,58 +1,95 @@
+/* =========================
+   Author Home
+========================= */
+
 .author-home {
     max-width: 1200px;
     margin: 0 auto;
     padding: 40px;
+
+    color: #1F2933;
 }
 
 
 /* =========================
    Welcome
-   ========================= */
+========================= */
 
 .author-welcome {
     padding: 45px;
-    border-radius: 16px;
+
     margin-bottom: 35px;
+
+    border-radius: 16px;
+
+    background-color: #FFFFFF;
+    border: 1px solid #E5E1D8;
+
+    box-shadow: 0 4px 16px rgba(23, 59, 77, 0.05);
 }
 
 .author-welcome p:first-child {
+    margin: 0;
+
+    color: #B7791F;
+
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 2px;
 }
 
 .author-welcome h1 {
-    font-size: 38px;
     margin: 15px 0 10px;
+
+    color: #173B4D;
+
+    font-size: 38px;
+    font-weight: 700;
 }
 
 .author-welcome p {
-    color: #666;
+    color: #6B7280;
+
     line-height: 1.6;
 }
 
+
+/* Welcome Button */
+
 .author-welcome button {
     margin-top: 20px;
+
     padding: 12px 20px;
 
     border: none;
     border-radius: 8px;
 
-    background: #222;
-    color: white;
+    background-color: #173B4D;
+    color: #FFFFFF;
 
     font-weight: 600;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.author-welcome button:hover {
+    background-color: #0F2D3B;
+
+    transform: translateY(-1px);
 }
 
 
 /* =========================
    Statistics
-   ========================= */
+========================= */
 
 .author-stats {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+
     gap: 20px;
 
     margin-bottom: 50px;
@@ -61,10 +98,20 @@
 .stat-card {
     padding: 25px;
 
-    border: 1px solid #e5e5e5;
+    background-color: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
     border-radius: 12px;
 
-    background: white;
+    box-shadow: 0 3px 12px rgba(23, 59, 77, 0.04);
+
+    transition: 0.2s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(23, 59, 77, 0.08);
 }
 
 .stat-card span {
@@ -73,18 +120,22 @@
 
 .stat-card h2 {
     margin: 15px 0 5px;
+
+    color: #173B4D;
+
     font-size: 28px;
 }
 
 .stat-card p {
     margin: 0;
-    color: #666;
+
+    color: #6B7280;
 }
 
 
 /* =========================
    Section Header
-   ========================= */
+========================= */
 
 .section-header {
     display: flex;
@@ -96,27 +147,39 @@
 
 .section-header h2 {
     margin: 0 0 5px;
+
+    color: #173B4D;
 }
 
 .section-header p {
     margin: 0;
-    color: #666;
+
+    color: #6B7280;
 }
 
 .section-header button {
     padding: 9px 16px;
 
-    border: 1px solid #ccc;
+    border: 1px solid #D8D4CC;
     border-radius: 7px;
 
-    background: white;
+    background-color: #FFFFFF;
+    color: #173B4D;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.section-header button:hover {
+    border-color: #173B4D;
+    background-color: #F3F6F7;
 }
 
 
 /* =========================
    Books
-   ========================= */
+========================= */
 
 .author-books {
     margin-bottom: 50px;
@@ -124,23 +187,39 @@
 
 .book-list {
     display: grid;
+
     grid-template-columns: repeat(3, 1fr);
+
     gap: 20px;
 }
 
 .author-book {
     display: flex;
+
     gap: 15px;
 
     padding: 18px;
 
-    border: 1px solid #e5e5e5;
+    background-color: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
     border-radius: 12px;
 
-    background: white;
+    box-shadow: 0 3px 12px rgba(23, 59, 77, 0.04);
+
+    transition: 0.2s ease;
 }
 
-.book-cover {
+.author-book:hover {
+    transform: translateY(-2px);
+
+    box-shadow: 0 6px 18px rgba(23, 59, 77, 0.08);
+}
+
+
+/* Book Cover */
+
+.author-book-cover {
     width: 80px;
     height: 105px;
 
@@ -150,29 +229,47 @@
 
     flex-shrink: 0;
 
+    overflow: hidden;
+
     border-radius: 7px;
 
-    background: #f1f1f1;
-
-    font-size: 35px;
+    background-color: #F1EFE9;
 }
+
+.author-book-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* Book Details */
 
 .book-details h3 {
     margin: 5px 0 7px;
+
+    color: #173B4D;
+
     font-size: 17px;
 }
 
 .book-details p {
     margin: 0 0 12px;
 
-    color: #666;
+    color: #6B7280;
+
     font-size: 14px;
 }
 
 
-/* Status */
+/* =========================
+   Status
+========================= */
 
-.status {
+.author-status {
     display: inline-block;
 
     padding: 5px 9px;
@@ -183,23 +280,38 @@
     font-weight: 600;
 }
 
-.published {
-    background: #e8f7ed;
-    color: #218838;
+
+/* Published */
+
+.author-status.published {
+    background-color: #E5F3EC;
+    color: #28734A;
 }
 
-.pending {
-    background: #fff4d6;
-    color: #996c00;
+
+/* Pending */
+
+.author-status.pending {
+    background-color: #FFF4D6;
+    color: #996C00;
+}
+
+
+/* Rejected */
+
+.author-status.rejected {
+    background-color: #FBE9E7;
+    color: #B42318;
 }
 
 
 /* =========================
    Revenue
-   ========================= */
+========================= */
 
 .revenue-section {
     display: flex;
+
     justify-content: space-between;
     align-items: center;
 
@@ -209,41 +321,65 @@
 
     border-radius: 14px;
 
-    background: #f5f5f5;
+    background-color: #173B4D;
+    color: #FFFFFF;
+
+    box-shadow: 0 5px 18px rgba(23, 59, 77, 0.12);
 }
 
 .revenue-section p:first-child {
+    margin: 0;
+
+    color: #F1D39A;
+
     font-size: 13px;
     font-weight: 700;
+
     letter-spacing: 2px;
 }
 
 .revenue-section h2 {
-    font-size: 36px;
     margin: 10px 0;
+
+    color: #FFFFFF;
+
+    font-size: 36px;
 }
 
 .revenue-section p {
-    color: #666;
+    color: #DDE7EA;
 }
+
+
+/* Revenue Button */
 
 .revenue-section button {
     padding: 11px 18px;
 
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 8px;
 
-    background: #222;
-    color: white;
+    background-color: #FFFFFF;
+    color: #173B4D;
 
     font-weight: 600;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.revenue-section button:hover {
+    background-color: #D69E4A;
+    color: #FFFFFF;
+
+    border-color: #D69E4A;
 }
 
 
 /* =========================
    Quick Actions
-   ========================= */
+========================= */
 
 .quick-actions {
     margin-bottom: 40px;
@@ -251,7 +387,9 @@
 
 .action-grid {
     display: grid;
+
     grid-template-columns: repeat(4, 1fr);
+
     gap: 20px;
 }
 
@@ -260,25 +398,29 @@
 
     display: flex;
     flex-direction: column;
+
     align-items: center;
     justify-content: center;
 
     gap: 12px;
 
-    border: 1px solid #e5e5e5;
+    border: 1px solid #E5E1D8;
     border-radius: 12px;
 
-    background: white;
+    background-color: #FFFFFF;
+    color: #173B4D;
 
     cursor: pointer;
 
-    transition: 0.2s;
+    transition: 0.2s ease;
 }
 
 .action-grid button:hover {
     transform: translateY(-3px);
 
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    border-color: #D69E4A;
+
+    box-shadow: 0 6px 18px rgba(23, 59, 77, 0.08);
 }
 
 .action-grid button:first-child {
@@ -293,7 +435,7 @@
 
 /* =========================
    Responsive
-   ========================= */
+========================= */
 
 @media (max-width: 900px) {
 
@@ -336,12 +478,7 @@
     .revenue-section {
         flex-direction: column;
         align-items: flex-start;
+
         gap: 20px;
     }
-}
-
-.home-page {
-    min-height: 100vh;
-    background-color: #F7F5F0;
-    color: #1F2933;
 }

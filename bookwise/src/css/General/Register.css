@@ -1,0 +1,79 @@
+.register-page {
+    min-height: calc(100vh - 68px);
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 45px 20px;
+    background-color: #F7F5F0;
+    box-sizing: border-box;
+}
+
+
+/* Main Card */
+
+.register-card {
+    width: 100%;
+    max-width: 820px;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E1D8;
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(23, 59, 77, 0.07);
+    overflow: hidden;
+}
+
+
+/* Header */
+
+.register-header {
+    padding: 35px 40px 25px;
+    text-align: center;
+}
+
+.register-header h1 {
+    margin: 0 0 18px;
+    color: #173B4D;
+    font-size: 28px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+.register-header h2 {
+    margin: 0 0 8px;
+    color: #1F2933;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.register-header p {
+    max-width: 520px;
+    margin: 0 auto;
+    color: #6B7280;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* Role Section */
+
+.register-role-section {
+    margin: 0 40px;
+    padding: 18px 0 22px;
+    border-top: 1px solid #E5E1D8;
+    border-bottom: 1px solid #E5E1D8;
+    text-align: center;
+}
+
+.register-role-label {
+    display: block;
+    margin-bottom: 12px;
+    color: #6B7280;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* Form Container */
+
+.register-form-container {
+    padding: 30px 40px 40px;
+}

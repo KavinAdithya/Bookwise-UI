@@ -1,78 +1,271 @@
+/* =========================
+   Book Registration
+========================= */
+
 .book-registration {
     max-width: 700px;
+
     margin: 40px auto;
-    padding: 30px;
-}
+    padding: 35px;
 
-.book-registration h1 {
-    margin-bottom: 5px;
-}
+    background-color: #FFFFFF;
 
-.form-description {
-    color: #666;
-    margin-bottom: 30px;
-}
+    border: 1px solid #E5E1D8;
+    border-radius: 12px;
 
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.form-group {
-    display: flex;
-    flex-direction: column;
-    gap: 7px;
-}
-
-.form-group label {
-    font-weight: 600;
-}
-
-.form-group input,
-.form-group textarea {
-    padding: 11px;
-
-    border: 1px solid #ccc;
-    border-radius: 7px;
-
-    font-size: 15px;
+    box-shadow: 0 4px 16px rgba(23, 59, 77, 0.05);
 
     box-sizing: border-box;
 }
 
-.form-group textarea {
-    resize: vertical;
+
+/* =========================
+   Heading
+========================= */
+
+.book-registration h1 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 28px;
+    font-weight: 700;
 }
 
-.copies-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+.form-description {
+    margin: 0 0 30px;
+
+    color: #6B7280;
+
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   Form
+========================= */
+
+.book-registration form {
+    display: flex;
+    flex-direction: column;
+
     gap: 20px;
 }
 
-.register-button {
-    padding: 12px;
 
-    border: none;
+/* =========================
+   Form Group
+========================= */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+
+    gap: 7px;
+}
+
+.form-group label {
+    color: #334155;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   Inputs
+========================= */
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+
+    padding: 11px 13px;
+
+    border: 1px solid #D9D5CC;
     border-radius: 7px;
 
-    background: #222;
-    color: white;
+    outline: none;
 
-    font-size: 16px;
-    font-weight: 600;
+    background-color: #FFFFFF;
+    color: #1F2933;
+
+    font-family: inherit;
+    font-size: 14px;
+
+    box-sizing: border-box;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+/* Focus */
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #173B4D;
+
+    box-shadow: 0 0 0 3px rgba(23, 59, 77, 0.08);
+}
+
+
+/* Placeholder */
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #A0A0A0;
+}
+
+
+/* Textarea */
+
+.form-group textarea {
+    min-height: 120px;
+
+    resize: vertical;
+
+    line-height: 1.5;
+}
+
+
+/* =========================
+   Copies
+========================= */
+
+.copies-row {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 20px;
+}
+
+
+/* =========================
+   File Input
+========================= */
+
+.form-group input[type="file"] {
+    padding: 9px;
+
+    cursor: pointer;
+
+    background-color: #FAF9F6;
+}
+
+.form-group input[type="file"]::file-selector-button {
+    margin-right: 10px;
+
+    padding: 7px 12px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 5px;
+
+    background-color: #FFFFFF;
+    color: #173B4D;
+
+    font-size: 13px;
+    font-weight: 500;
 
     cursor: pointer;
 }
 
+.form-group input[type="file"]::file-selector-button:hover {
+    background-color: #F3F6F7;
+}
+
+
+/* =========================
+   Selected File
+========================= */
+
 .file-name {
     margin: 0;
-    font-size: 14px;
-    color: #666;
+
+    color: #6B7280;
+
+    font-size: 13px;
 }
+
+
+/* =========================
+   Register Button
+========================= */
+
+.register-button {
+    width: 100%;
+
+    padding: 12px 18px;
+
+    margin-top: 5px;
+
+    border: none;
+    border-radius: 7px;
+
+    background-color: #173B4D;
+    color: #FFFFFF;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.register-button:hover {
+    background-color: #0F2D3B;
+
+    transform: translateY(-1px);
+}
+
+.register-button:active {
+    transform: translateY(0);
+}
+
+
+/* =========================
+   Form Message
+========================= */
 
 .form-message {
     margin-top: 20px;
-    padding: 12px;
+
+    padding: 12px 14px;
+
+    border-radius: 7px;
+
+    background-color: #F3F6F7;
+    color: #173B4D;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   Responsive
+========================= */
+
+@media (max-width: 600px) {
+
+    .book-registration {
+        margin: 20px;
+        padding: 25px 20px;
+    }
+
+    .book-registration h1 {
+        font-size: 24px;
+    }
+
+    .copies-row {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
 }

@@ -1,10 +1,9 @@
 .author-book-detail-page {
     min-height: 100vh;
     padding: 30px;
-    background-color: #f8f9fa;
+    background-color: #F7F5F0;
     box-sizing: border-box;
 }
-
 
 /* Back Button */
 
@@ -13,13 +12,13 @@
     padding: 8px 14px;
     border: none;
     background: transparent;
-    color: #555;
+    color: #6B7280;
     font-size: 14px;
     cursor: pointer;
 }
 
 .back-btn:hover {
-    color: #111;
+    color: #173B4D;
 }
 
 
@@ -29,10 +28,11 @@
     max-width: 950px;
     margin: 0 auto;
     padding: 30px;
-    background-color: white;
-    border: 1px solid #e1e1e1;
+    background-color: #FFFFFF;
+    border: 1px solid #E5E1D8;
     border-radius: 10px;
     box-sizing: border-box;
+    box-shadow: 0 4px 16px rgba(23, 59, 77, 0.05);
 }
 
 
@@ -40,9 +40,27 @@
 
 .book-detail-header {
     display: flex;
+    align-items: center;
     gap: 30px;
     padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #E5E1D8;
+}
+
+
+/* Book Cover */
+
+.book-cover1 {
+    flex-shrink: 0;
+    margin: 0;
+}
+
+.book-cover1 img {
+    width: 150px;
+    height: 215px;
+    object-fit: cover;
+    display: block;
+    margin: 0;
+    border-radius: 7px;
 }
 
 
@@ -55,12 +73,12 @@
 .book-main-info h1 {
     margin: 0 0 10px;
     font-size: 30px;
-    color: #222;
+    color: #173B4D;
 }
 
 .book-category {
     margin: 0 0 18px;
-    color: #777;
+    color: #6B7280;
     font-size: 15px;
 }
 
@@ -76,18 +94,18 @@
 }
 
 .book-status.pending {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: #FFF4D6;
+    color: #996C00;
 }
 
 .book-status.published {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #E5F3EC;
+    color: #28734A;
 }
 
 .book-status.rejected {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #FBE9E7;
+    color: #B42318;
 }
 
 
@@ -95,13 +113,13 @@
 
 .book-section {
     padding: 25px 0;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #E5E1D8;
 }
 
 .book-section h2 {
     margin: 0 0 18px;
     font-size: 18px;
-    color: #333;
+    color: #173B4D;
 }
 
 
@@ -109,7 +127,7 @@
 
 .book-description {
     margin: 0;
-    color: #666;
+    color: #6B7280;
     font-size: 15px;
     line-height: 1.7;
 }
@@ -132,14 +150,14 @@
 .book-info-item label {
     font-size: 12px;
     font-weight: 600;
-    color: #888;
+    color: #6B7280;
     text-transform: uppercase;
 }
 
 .book-info-item p {
     margin: 0;
     font-size: 15px;
-    color: #333;
+    color: #1F2933;
 }
 
 
@@ -164,52 +182,62 @@
 
 .edit-book-btn {
     border: none;
-    background-color: #333;
-    color: white;
+    background-color: #173B4D;
+    color: #FFFFFF;
 }
 
 .edit-book-btn:hover {
-    background-color: #111;
+    background-color: #0F2D3B;
 }
 
 
 /* Deactivate */
 
 .deactivate-book-btn {
-    border: 1px solid #dc3545;
-    background-color: white;
-    color: #dc3545;
+    border: 1px solid #B42318;
+    background-color: #FFFFFF;
+    color: #B42318;
 }
 
 .deactivate-book-btn:hover {
-    background-color: #dc3545;
-    color: white;
-}
-.book-cover1 {
-    position: static;
-    flex-shrink: 0;
-    margin: 0;
+    background-color: #B42318;
+    color: #FFFFFF;
 }
 
-.book-cover1 img {
-    width: 150px;
-    height: 215px;
-    object-fit: cover;
-    display: block;
-    margin: 0;
+
+/* Responsive */
+
+@media (max-width: 700px) {
+
+    .author-book-detail-page {
+        padding: 20px;
+    }
+
+    .book-detail-card {
+        padding: 20px;
+    }
+
+    .book-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .book-info-grid {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
-.book-detail-header {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    padding-bottom: 30px;
-    border-bottom: 1px solid #eee;
-}
+@media (max-width: 500px) {
 
-.author-book-detail-page {
-    min-height: 100vh;
-    padding: 30px;
-    background-color: #f8f9fa;
-    box-sizing: border-box;
+    .book-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .book-detail-actions {
+        flex-direction: column;
+    }
+
+    .book-detail-actions button {
+        width: 100%;
+    }
 }

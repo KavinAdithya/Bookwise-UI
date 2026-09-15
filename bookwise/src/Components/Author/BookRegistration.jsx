@@ -141,7 +141,7 @@ function BookRegistration() {
                 <div className="form-group">
                     
                     <Lookup
-                        title="Select Category"
+                        title="Category"
                         values={categories}
                         onSelect={setCategoryId}
                     />

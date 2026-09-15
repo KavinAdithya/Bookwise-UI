@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "./AuthProvider";
 import Navigation from "./Navigation";
 import Logo from './Logo';
+import '../../css/General/Header.css'
 
 
 function Header() {

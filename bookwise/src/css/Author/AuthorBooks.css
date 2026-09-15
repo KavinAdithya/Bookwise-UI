@@ -1,123 +1,188 @@
-/* Page */
+/* =========================
+   Author Books Page
+========================= */
 
 .author-books-page {
     min-height: 100vh;
+
     padding: 30px;
-    background-color: #f8f9fa;
+
+    background-color: #F7F5F0;
+
     box-sizing: border-box;
 }
 
 
-/* Header */
+/* =========================
+   Header
+========================= */
 
 .books-page-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 25px;
 }
 
 .books-page-header h1 {
     margin: 0;
+
+    color: #173B4D;
+
     font-size: 28px;
-    color: #222;
+    font-weight: 700;
 }
 
 .books-page-header p {
     margin: 7px 0 0;
+
+    color: #6B7280;
+
     font-size: 14px;
-    color: #777;
 }
 
 
-/* Add Book */
+/* =========================
+   Add Book
+========================= */
 
 .add-book-btn {
     padding: 10px 18px;
+
     border: none;
-    border-radius: 6px;
-    background-color: #333;
-    color: white;
+    border-radius: 7px;
+
+    background-color: #173B4D;
+    color: #FFFFFF;
+
     font-size: 14px;
+    font-weight: 600;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
 .add-book-btn:hover {
-    background-color: #111;
+    background-color: #0F2D3B;
+
+    transform: translateY(-1px);
 }
 
 
-/* Toolbar */
+/* =========================
+   Toolbar
+========================= */
 
 .books-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     margin-bottom: 20px;
+
     gap: 20px;
 }
 
 
-/* Search */
+/* =========================
+   Search
+========================= */
 
 .books-toolbar input {
     width: 350px;
+
     padding: 11px 14px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
+
+    border: 1px solid #DDD8CF;
+    border-radius: 7px;
+
     outline: none;
-    background-color: white;
+
+    background-color: #FFFFFF;
+    color: #1F2933;
+
     font-size: 14px;
+
     box-sizing: border-box;
+
+    transition: 0.2s ease;
+}
+
+.books-toolbar input::placeholder {
+    color: #9A9A9A;
 }
 
 .books-toolbar input:focus {
-    border-color: #555;
+    border-color: #173B4D;
+
+    box-shadow: 0 0 0 3px rgba(23, 59, 77, 0.08);
 }
 
 
-/* Filters */
+/* =========================
+   Filters
+========================= */
 
 .book-status-filters {
     display: flex;
+
     gap: 8px;
 }
 
 .book-status-filters button {
     padding: 9px 15px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: white;
-    color: #444;
+
+    border: 1px solid #DDD8CF;
+    border-radius: 7px;
+
+    background-color: #FFFFFF;
+    color: #555F65;
+
     font-size: 14px;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
 .book-status-filters button:hover {
-    background-color: #f1f1f1;
+    border-color: #173B4D;
+
+    color: #173B4D;
 }
 
 
 /* Active Filter */
 
 .book-status-filters button.active {
-    background-color: #333;
-    color: white;
-    border-color: #333;
+    background-color: #173B4D;
+    color: #FFFFFF;
+
+    border-color: #173B4D;
 }
 
 
-/* Table */
+/* =========================
+   Books Table
+========================= */
 
 .books-table {
-    background-color: white;
-    border: 1px solid #e1e1e1;
-    border-radius: 8px;
+    background-color: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
     overflow: hidden;
+
+    box-shadow: 0 3px 12px rgba(23, 59, 77, 0.04);
 }
 
 
-/* Row */
+/* =========================
+   Table Row
+========================= */
 
 .book-row {
     display: grid;
@@ -136,58 +201,97 @@
 
     padding: 0 20px;
 
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #EEEAE3;
 
     column-gap: 15px;
+
+    transition: background-color 0.2s ease;
 }
 
 .book-row:last-child {
     border-bottom: none;
 }
 
-
-/* Header */
-
-.book-table-header {
-    min-height: 50px;
-    background-color: #f5f5f5;
-    font-weight: 600;
-    color: #444;
+.book-row:not(.book-table-header):hover {
+    background-color: #FBFAF7;
 }
 
 
-/* Cells */
+/* =========================
+   Table Header
+========================= */
+
+.book-table-header {
+    min-height: 52px;
+
+    background-color: #F4F2ED;
+
+    color: #53616A;
+
+    font-size: 13px;
+    font-weight: 600;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================
+   Cells
+========================= */
 
 .book-row > div {
     font-size: 14px;
-    color: #333;
+
+    color: #334155;
 }
 
 
-/* Book Cover */
+/* =========================
+   Book Cover
+========================= */
+.book-cover-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
 .book-cover-cell img {
     width: 42px;
     height: 55px;
-    object-fit: cover;
-    border-radius: 4px;
+
     display: block;
+    object-fit: cover;
+
+    border-radius: 5px;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
 }
 
 
-/* Book Title */
+/* =========================
+   Book Title
+========================= */
 
 .book-title {
-    font-weight: 500;
+    color: #173B4D !important;
+
+    font-weight: 600;
 }
 
 
-/* Status */
+/* =========================
+   Status
+========================= */
 
 .book-status {
     display: inline-block;
+
     padding: 5px 10px;
+
     border-radius: 20px;
+
     font-size: 12px;
     font-weight: 600;
 }
@@ -196,39 +300,55 @@
 /* Pending */
 
 .book-status.pending {
-    background-color: #fff3cd;
-    color: #856404;
+    background-color: #FFF4D6;
+
+    color: #996C00;
 }
 
 
 /* Published */
 
 .book-status.published {
-    background-color: #d4edda;
-    color: #155724;
+    background-color: #E5F3EC;
+
+    color: #28734A;
 }
 
 
 /* Rejected */
 
 .book-status.rejected {
-    background-color: #f8d7da;
-    color: #721c24;
+    background-color: #FBE9E7;
+
+    color: #B42318;
 }
 
 
-/* View Button */
+/* =========================
+   View Button
+========================= */
 
 .view-book-btn {
     padding: 7px 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: white;
-    color: #333;
+
+    border: 1px solid #D4D0C8;
+    border-radius: 6px;
+
+    background-color: #FFFFFF;
+    color: #173B4D;
+
     font-size: 13px;
+    font-weight: 500;
+
     cursor: pointer;
+
+    transition: 0.2s ease;
 }
 
 .view-book-btn:hover {
-    background-color: #f2f2f2;
+    background-color: #173B4D;
+
+    color: #FFFFFF;
+
+    border-color: #173B4D;
 }
