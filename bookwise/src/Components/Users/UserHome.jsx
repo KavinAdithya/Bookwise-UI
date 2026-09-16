@@ -3,7 +3,7 @@ import "../../css/Users/UserHome.css"
 
 function UserHome() {
     return (
-        <div className="home-page">
+        <div className="user-home">
 
             {/* Welcome */}
             <section className="home-welcome">
@@ -54,7 +54,7 @@ function UserHome() {
                 <div className="book-grid">
 
                     <div className="book-card">
-                        <div className="book-cover">
+                        <div className="user-book-cover">
                             📖
                         </div>
 
@@ -65,7 +65,7 @@ function UserHome() {
 
 
                     <div className="book-card">
-                        <div className="book-cover">
+                        <div className="user-book-cover">
                             📕
                         </div>
 
@@ -76,7 +76,7 @@ function UserHome() {
 
 
                     <div className="book-card">
-                        <div className="book-cover">
+                        <div className="user-book-cover">
                             📗
                         </div>
 
@@ -87,7 +87,7 @@ function UserHome() {
 
 
                     <div className="book-card">
-                        <div className="book-cover">
+                        <div className="user-book-cover">
                             📘
                         </div>
 

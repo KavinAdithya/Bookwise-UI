@@ -1,4 +1,5 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
+import { getCurrentUserDetails } from "../../apiservice/users/userservice";
 
 export const AuthContext = createContext();
 
@@ -6,17 +7,41 @@ function AuthProvider({children}) {
     
     const [isAuthenticated, setIsAuthenticated] = useState(!!localStorage.getItem("token"));
     const [user, setUser] = useState({})
+    const [loading, setLoading] = useState(true)
 
-    const login = (user) => {
-        console.log("Login ")
-        localStorage.setItem("token", user.token);
+    async function fetchCurrentUser(isAuth) {
+
+        if (!isAuthenticated && !isAuth)
+            return;
+
+        try {
+            const respone = await getCurrentUserDetails();
+            setUser(respone.data.data);
+        } catch(error) {
+            console.log("Failed to fetch current logger in user details");
+            logout();
+        } finally {
+            setLoading(false);
+        }
+    }
+
+    useEffect(() => {
+        if (isAuthenticated)
+            fetchCurrentUser(false);
+        else
+            setLoading(false);
+    }, [])
+
+    const login = (data) => {
+        localStorage.setItem("token", data.token);
+        setUser(data.userDetail)
         setIsAuthenticated(true)
-        setUser(user)
     }
 
     const logout = () => {
         localStorage.removeItem("token")
         setIsAuthenticated(false)
+        setLoading(false)
         setUser({})
     }
 
@@ -26,6 +51,7 @@ function AuthProvider({children}) {
                             isAuthenticated,
                             login,
                             logout,
+                            loading,
                             user
                         }}>
             {children}

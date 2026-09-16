@@ -11,3 +11,7 @@ export function registerUser(userData) {
 export function authenitcateUser(userCredential) {
     return apiClient.post("/users/login", userCredential)
 }
+
+export function getCurrentUserDetails() {
+    return apiClient.get("/users/me");
+}

@@ -34,11 +34,12 @@ function Login() {
 
             const response = await authenitcateUser(credential);
 
-            const user = response.data.data;
+            const data = response.data.data;
 
-            login(user);
+            login(data);
 
-            const role = user.role;
+            debugger;
+            const role = data.userDetail.role;
 
             if (role === "USER") {
                 navigate("/home");
