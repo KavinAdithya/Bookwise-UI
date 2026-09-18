@@ -1,8 +1,12 @@
-function DataTable({ columns, data, onRowClick }) {
+import '../../../css/General/DataTable/DataTable.css'
+function DataTable({ columns, data, onRowClick, columnWidths }) {
+
     return (
         <div
             className="data-table"
-            style={{ "--table-columns": columns.length }}
+            style={{
+                "--table-columns": columnWidths || `repeat(${columns.length}, minmax(0, 1fr))`
+            }}
         >
             <div className="data-table-header">
                 {columns.map((column) => (
@@ -22,7 +26,8 @@ function DataTable({ columns, data, onRowClick }) {
                         <div key={column.key}>
                             {column.render
                                 ? column.render(item)
-                                : item[column.key]}
+                                : item[column.key]
+                            }
                         </div>
                     ))}
                 </div>

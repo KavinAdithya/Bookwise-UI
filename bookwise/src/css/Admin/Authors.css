@@ -151,58 +151,6 @@
     box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
 }
 
-
-/* =========================
-   Table Row
-========================= */
-
-.table-row {
-    display: grid;
-    grid-template-columns: 1.2fr 2fr 1fr 1fr 1fr;
-
-    align-items: center;
-
-    min-height: 60px;
-    padding: 0 20px;
-
-    border-bottom: 1px solid #E5E1D8;
-}
-
-.table-row:last-child {
-    border-bottom: none;
-}
-
-
-/* =========================
-   Table Header
-========================= */
-
-.table-header {
-    min-height: 50px;
-
-    background-color: #F3F6F7;
-
-    color: #173B4D;
-
-    font-size: 13px;
-    font-weight: 600;
-}
-
-
-/* =========================
-   Table Data
-========================= */
-
-.table-row > div {
-    color: #1F2933;
-    font-size: 14px;
-}
-
-.table-row:not(.table-header):hover {
-    background-color: #FBFAF7;
-}
-
-
 /* =========================
    Status Badge
 ========================= */

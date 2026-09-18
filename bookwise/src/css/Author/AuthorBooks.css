@@ -179,35 +179,6 @@
     box-shadow: 0 3px 12px rgba(23, 59, 77, 0.04);
 }
 
-
-/* =========================
-   Table Row
-========================= */
-
-.book-row {
-    display: grid;
-
-    grid-template-columns:
-        0.7fr
-        2fr
-        1.5fr
-        1fr
-        1.2fr
-        1fr;
-
-    align-items: center;
-
-    min-height: 70px;
-
-    padding: 0 20px;
-
-    border-bottom: 1px solid #EEEAE3;
-
-    column-gap: 15px;
-
-    transition: background-color 0.2s ease;
-}
-
 .book-row:last-child {
     border-bottom: none;
 }
@@ -215,27 +186,6 @@
 .book-row:not(.book-table-header):hover {
     background-color: #FBFAF7;
 }
-
-
-/* =========================
-   Table Header
-========================= */
-
-.book-table-header {
-    min-height: 52px;
-
-    background-color: #F4F2ED;
-
-    color: #53616A;
-
-    font-size: 13px;
-    font-weight: 600;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.4px;
-}
-
 
 /* =========================
    Cells
@@ -246,29 +196,6 @@
 
     color: #334155;
 }
-
-
-/* =========================
-   Book Cover
-========================= */
-.book-cover-cell {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.book-cover-cell img {
-    width: 42px;
-    height: 55px;
-
-    display: block;
-    object-fit: cover;
-
-    border-radius: 5px;
-
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
-}
-
 
 /* =========================
    Book Title
@@ -351,4 +278,18 @@
     color: #FFFFFF;
 
     border-color: #173B4D;
+}
+
+.book-cover-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.book-cover-cell img {
+    width: 42px;
+    height: 56px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
 }

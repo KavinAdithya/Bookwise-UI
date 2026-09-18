@@ -1,36 +1,100 @@
 import { useEffect, useState } from "react";
 import { fetchAllAuthorBooks } from "../../apiservice/books/Book";
-import '../../css/Author/AuthorBooks.css'
+import "../../css/Author/AuthorBooks.css";
 import { useNavigate } from "react-router-dom";
+import DataTable from "../../components/General/DataTable/DataTable";
 
 function AuthorBooks() {
-    const [books, setBooks] = useState([])
-    const navigate = useNavigate()
+
+    const [books, setBooks] = useState([]);
+    const navigate = useNavigate();
 
     async function fetchAuthorAllBooks() {
         try {
             const response = await fetchAllAuthorBooks();
-            setBooks(response.data.data)
-        }  catch (error) { 
+            setBooks(response.data.data);
+        } catch (error) {
             console.error("Error fetching author books:", error);
-        }   
+        }
     }
 
-    useEffect(() => {fetchAuthorAllBooks()}, [])
+    useEffect(() => {
+        fetchAuthorAllBooks();
+    }, []);
 
     function handleViewBook(bookId) {
-        navigate(`/author/book/${bookId}`)
+        navigate(`/author/book/${bookId}`);
     }
 
-    // if (!books)
-    //     return <div>Loading...</div>
-    
+    const bookColumns = [
+        {
+            key: "coverImageUrl",
+            label: "Cover",
+            render: (book) => (
+                <div className="book-cover-cell">
+                    <img
+                        src={`http://localhost:8080/${book.coverImageUrl}`}
+                        alt={book.title}
+                    />
+                </div>
+            )
+        },
+        {
+            key: "title",
+            label: "Title",
+            render: (book) => (
+                <div className="book-title">
+                    {book.title}
+                </div>
+            )
+        },
+        {
+            key: "categoryName",
+            label: "Category"
+        },
+        {
+            key: "copies",
+            label: "Copies",
+            render: (book) => (
+                <span>
+                    {book.availableCopies}/{book.totalCopies}
+                </span>
+            )
+        },
+        {
+            key: "status",
+            label: "Status",
+            render: (book) => (
+                <span
+                    className={`book-status ${book.status.toLowerCase()}`}
+                >
+                    {book.status}
+                </span>
+            )
+        },
+        {
+            key: "action",
+            label: "Action",
+            render: (book) => (
+                <button
+                    className="view-book-btn"
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        handleViewBook(book.id);
+                    }}
+                >
+                    View
+                </button>
+            )
+        }
+    ];
 
     return (
         <div className="author-books-page">
 
             {/* Header */}
             <div className="books-page-header">
+
                 <div>
                     <h1>My Books</h1>
                     <p>Manage your books and track their status</p>
@@ -38,10 +102,11 @@ function AuthorBooks() {
 
                 <button
                     className="add-book-btn"
-                    onClick={() => navigate("/author/books/register") }
+                    onClick={() => navigate("/author/books/register")}
                 >
                     + Add Book
                 </button>
+
             </div>
 
 
@@ -55,25 +120,19 @@ function AuthorBooks() {
 
                 <div className="book-status-filters">
 
-                    <button
-                    >
+                    <button>
                         All
                     </button>
 
-                    <button
-                    >
+                    <button>
                         Pending
                     </button>
 
-                    <button
-                    >
+                    <button>
                         Published
                     </button>
 
-                    <button
-                        // className={status === "REJECTED" ? "active" : ""}
-                        // onClick={() => setStatus("REJECTED")}
-                    >
+                    <button>
                         Rejected
                     </button>
 
@@ -82,82 +141,13 @@ function AuthorBooks() {
             </div>
 
 
-            {/* Books Table */}
-            <div className="books-table">
-
-                {/* Table Header */}
-                <div className="book-row book-table-header">
-
-                    <div>Cover</div>
-                    <div>Title</div>
-                    <div>Category</div>
-                    <div>Copies</div>
-                    <div>Status</div>
-                    <div>Action</div>
-
-                </div>
-
-
-                {/* Book Rows */}
-                {books.map((book) => (
-
-                    <div
-                        className="book-row"
-                        key={book.id}
-                    >
-
-                        {/* Cover */}
-                        <div className="book-cover-cell">
-                            <img
-                                src={`http://localhost:8080/${book.coverImageUrl}`}
-                                alt={book.title}
-                            />
-                        </div>
-
-
-                        {/* Title */}
-                        <div className="book-title">
-                            {book.title}
-                        </div>
-
-
-                        {/* Category */}
-                        <div>
-                            {book.categoryName}
-                        </div>
-
-
-                        {/* Copies */}
-                        <div>
-                            {book.totalCopies}/{book.availableCopies}
-                        </div>
-
-
-                        {/* Status */}
-                        <div>
-                            <span
-                                className={`book-status ${book.status.toLowerCase()}`}
-                            >
-                                {book.status}
-                            </span>
-                        </div>
-
-
-                        {/* Action */}
-                        <div>
-                            <button
-                                className="view-book-btn"
-                                onClick={() => handleViewBook(book.id)}
-                            >
-                                View
-                            </button>
-                        </div>
-
-                    </div>
-
-                ))}
-
-            </div>
+            {/* Reusable DataTable */}
+            <DataTable
+                columns={bookColumns}
+                data={books}
+                onRowClick={(book) => handleViewBook(book.id)}
+                columnWidths="0.7fr 1.8fr 1.2fr 0.9fr 1fr 0.8fr"
+            />
 
         </div>
     );

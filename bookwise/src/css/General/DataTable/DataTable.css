@@ -1,0 +1,136 @@
+.data-table {
+    width: 100%;
+    overflow: hidden;
+
+    background-color: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 8px;
+
+    box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+
+.data-table-header,
+.data-table-row {
+    display: grid;
+
+    grid-template-columns: repeat(
+        var(--table-columns),
+        1fr
+    );
+
+    align-items: center;
+
+    padding: 0 20px;
+}
+
+.data-table-header,
+.data-table-row {
+    display: grid;
+    grid-template-columns: var(--table-columns);
+    align-items: center;
+}
+
+.data-table-header {
+    min-height: 50px;
+
+    background-color: #F3F6F7;
+
+    color: #173B4D;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+.data-table-row {
+    min-height: 60px;
+
+    border-bottom: 1px solid #E5E1D8;
+
+    color: #1F2933;
+
+    font-size: 14px;
+
+    transition: background-color 0.2s ease;
+}
+
+
+.data-table-row:last-child {
+    border-bottom: none;
+}
+
+
+.data-table-row:hover {
+    background-color: #FBFAF7;
+}
+
+
+.table-action-btn {
+    padding: 7px 14px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 6px;
+
+    background-color: #FFFFFF;
+    color: #173B4D;
+
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+
+.table-action-btn:hover {
+    border-color: #173B4D;
+    background-color: #F3F6F7;
+}
+
+
+.data-table {
+    width: 100%;
+    overflow: hidden;
+    background: #FFFFFF;
+    border: 1px solid #E5E1D8;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+.data-table-header,
+.data-table-row {
+    display: grid;
+    grid-template-columns: var(--table-columns);
+    align-items: center;
+    padding: 0 32px;
+    box-sizing: border-box;
+}
+
+.data-table-header {
+    min-height: 50px;
+    background: #F3F6F7;
+    color: #173B4D;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.data-table-row {
+    min-height: 70px;
+    border-bottom: 1px solid #E5E1D8;
+    color: #1F2933;
+    font-size: 14px;
+    text-align: center;
+}
+
+.data-table-row:last-child {
+    border-bottom: none;
+}
+
+.data-table-row:hover {
+    background: #FBFAF7;
+}
+.data-table-header > div {
+    text-align: center;
+}

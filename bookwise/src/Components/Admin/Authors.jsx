@@ -1,23 +1,28 @@
-import {getAllAuthors, getAuthorByStatus} from '../../apiservice/authors/AuthorService';
+import { getAllAuthors, getAuthorByStatus } from '../../apiservice/authors/AuthorService';
 import { useEffect, useState } from 'react';
 import '../../css/Admin/Authors.css';
 import { useNavigate } from 'react-router-dom';
+import DataTable from '../General/DataTable/DataTable'
 
 function Authors() {
+
     const [authors, setAuthors] = useState([]);
+    const [status, setStatus] = useState("ALL");
+
     const navigate = useNavigate();
-    
+
     function handleView(author) {
         navigate(`/admin/authors/review/${author.id}`);
     }
 
     async function fetchAuthors() {
-        try {   
+        try {
             const response = await getAllAuthors();
             setAuthors(response.data.data);
-        }   catch (error) { 
+            setStatus("ALL");
+        } catch (error) {
             console.error("Error fetching authors:", error);
-        }   
+        }
     }
 
     useEffect(() => {
@@ -25,13 +30,70 @@ function Authors() {
     }, []);
 
     async function filterByStatus(status) {
-         try {   
+        try {
             const response = await getAuthorByStatus(status);
             setAuthors(response.data.data);
-        }   catch (error) { 
+            setStatus(status);
+        } catch (error) {
             console.error("Error fetching authors:", error);
-        } 
+        }
     }
+
+    const authorColumns = [
+        {
+            key: "authorName",
+            label: "Author"
+        },
+        {
+            key: "email",
+            label: "Email"
+        },
+        {
+            key: "createdAt",
+            label: "Submitted On",
+            render: (author) => (
+                <span>
+                    {author.createdAt.split("T")[0]}
+                </span>
+            )
+        },
+        {
+            key: "status",
+            label: "Status",
+            render: (author) => (
+                <span className={`status ${author.status.toLowerCase()}`}>
+                    {author.status}
+                </span>
+            )
+        },
+        {
+            key: "action",
+            label: "Action",
+            render: (author) => (
+                author.status === "PENDING" ? (
+                    <button
+                        className="review-btn"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            handleView(author);
+                        }}
+                    >
+                        Review
+                    </button>
+                ) : (
+                    <button
+                        className="view-btn"
+                        onClick={(event) => {
+                            event.stopPropagation();
+                            handleView(author);
+                        }}
+                    >
+                        View
+                    </button>
+                )
+            )
+        }
+    ];
 
     return (
         <div className="author-requests">
@@ -42,72 +104,48 @@ function Authors() {
             </div>
 
             <div className="request-toolbar">
+
                 <input
                     type="text"
                     placeholder="Search authors..."
                 />
 
                 <div className="status-filters">
-                    <button className={status === "ALL" ? "active" : ""} onClick={fetchAuthors}>
+
+                    <button
+                        className={status === "ALL" ? "active" : ""}
+                        onClick={fetchAuthors}
+                    >
                         All
                     </button>
 
-                    <button className={status === "PENDING" ? "active" : ""} onClick={() => filterByStatus("PENDING")}>
+                    <button
+                        className={status === "PENDING" ? "active" : ""}
+                        onClick={() => filterByStatus("PENDING")}
+                    >
                         Pending
                     </button>
 
-                    <button className={status === "APPROVED" ? "active" : ""} onClick={() => filterByStatus("APPROVED")}>
+                    <button
+                        className={status === "APPROVED" ? "active" : ""}
+                        onClick={() => filterByStatus("APPROVED")}
+                    >
                         Approved
                     </button>
-                </div>
-            </div>
 
-            <div className="author-table">
-
-                <div className="table-row table-header">
-                    <div>Author</div>
-                    <div>Email</div>
-                    <div>Date</div>
-                    <div>Status</div>
-                    <div>Action</div>
                 </div>
 
-                {authors.map((author) => (
-                    <div className="table-row" key={author.id}>
-                        <div>{author.authorName}</div>
-                        <div>{author.email}</div>
-                        <div>{author.createdAt.split("T")[0]}</div>
-
-                        <div>
-                            <span className={`status ${author.status.toLowerCase()}`}>
-                                {author.status}
-                            </span>
-                        </div>
-
-                        <div>
-                            {author.status === "PENDING" ? (
-                                <button
-                                    className="review-btn"
-                                    onClick={() => handleView(author)}
-                                >
-                                    Review
-                                </button>
-                            ) : (
-                                <button
-                                    className="view-btn"
-                                    onClick={() => handleView(author)}
-                                >
-                                    View
-                                </button>
-                            )}
-                        </div>
-                    </div>
-                ))}
-
             </div>
+
+            <DataTable
+                columns={authorColumns}
+                data={authors}
+                onRowClick={handleView}
+                columnWidths="1.5fr 3fr 2fr 2fr 0.8fr"
+            />
 
         </div>
-            );
+    );
 }
 
 export default Authors;
