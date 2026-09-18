@@ -1,4 +1,4 @@
-import "../../css/General/Lookup.css";
+import "../../../css/General/Lookup.css";
 
 function Lookup({ title, values, onSelect }) {
 

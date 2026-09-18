@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import "../css/Welcome.css"
-import { AuthContext } from "./General/AuthProvider";
+import { AuthContext } from "./General/Auth/AuthProvider";
 import { useContext } from "react";
 
 function Welcome() {

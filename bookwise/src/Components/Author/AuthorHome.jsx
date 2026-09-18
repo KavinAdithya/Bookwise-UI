@@ -1,6 +1,6 @@
 import '../../css/Author/AuthorHome.css';
 import { useContext } from 'react';
-import { AuthContext } from '../General/AuthProvider';
+import { AuthContext } from '../General/Auth/AuthProvider';
 import { useNavigate } from 'react-router-dom';
 
 function AuthorHome() {

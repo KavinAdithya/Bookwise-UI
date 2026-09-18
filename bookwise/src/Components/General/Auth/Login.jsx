@@ -1,8 +1,8 @@
 import { useContext, useState } from "react";
-import { authenitcateUser } from "../../apiservice/users/userservice";
+import { authenitcateUser } from "../../../apiservice/users/userservice";
 import { AuthContext } from "./AuthProvider";
 import { useNavigate } from "react-router-dom";
-import "../../css/General/Login.css";
+import "../../../css/General/Login.css";
 
 function Login() {
 

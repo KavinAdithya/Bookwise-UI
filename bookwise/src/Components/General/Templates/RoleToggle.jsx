@@ -1,4 +1,4 @@
-import '../../css/General/RoleToggle.css'
+import '../../../css/General/RoleToggle.css'
 
 function RoleToggle({ role, setRole }) {
 

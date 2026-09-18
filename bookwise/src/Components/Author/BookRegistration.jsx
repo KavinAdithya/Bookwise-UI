@@ -2,7 +2,7 @@ import { useState } from "react";
 import "../../css/Author/BookRegistration.css";
 import { useEffect } from "react";
 import {fetchCategoriesChoice} from "../../apiservice/categories/Category";
-import Lookup from "../General/Lookup";
+import Lookup from "../General/Templates/Lookup";
 import { registerBook } from "../../apiservice/books/Book";
 
 function BookRegistration() {

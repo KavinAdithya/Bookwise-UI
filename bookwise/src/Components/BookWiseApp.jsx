@@ -1,12 +1,12 @@
-import Register from './General/Register';
-import Login from './General/Login'
+import Register from './General/Auth/Register';
+import Login from './General/Auth/Login'
 import {BrowserRouter, Route, Routes } from 'react-router-dom'
-import Layout from "./General/Layout";
-import AuthProvider from "./General/AuthProvider";
+import Layout from "./General/Templates/Layout";
+import AuthProvider from "./General/Auth/AuthProvider";
 import NotFound from "./General/NotFound"
 import UnAuthorized from './General/UnAuthorized'
 import Welcome from './Welcome'
-import AuthorizationRoute from './General/AuthorizationRoute';
+import AuthorizationRoute from './General/Auth/AuthorizationRoute';
 import UserHome from './Users/UserHome';
 import BookRegistration from './Author/BookRegistration';
 import AuthorHome from './Author/AuthorHome';

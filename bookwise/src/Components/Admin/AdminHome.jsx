@@ -1,7 +1,7 @@
 import { useContext, useState, useEffect } from 'react';
 import '../../css/Admin/AdminHome.css';
 import { useNavigate } from 'react-router-dom';
-import {AuthContext} from '../General/AuthProvider'
+import {AuthContext} from '../General/Auth/AuthProvider'
 import { getAuthorByStatus } from '../../apiservice/authors/AuthorService';
 
 function AdminHome() {

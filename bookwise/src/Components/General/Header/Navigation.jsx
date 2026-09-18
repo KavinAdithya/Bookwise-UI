@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { AuthContext } from "./AuthProvider";
+import { AuthContext } from "../Auth/AuthProvider";
 import { useContext } from "react";
 
 const navigation = {
@@ -19,7 +19,8 @@ const navigation = {
     ADMIN: [
         { label: "Home", path: "/admin/home"},
         { label: "Users", path: "/admin/users" },
-        { label: "Authors", path: "/admin/authors" }
+        { label: "Authors", path: "/admin/authors" },
+        { label: "Books", path: "/admin/books"}
     ]
 };
 

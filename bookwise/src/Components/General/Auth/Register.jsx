@@ -1,8 +1,8 @@
-import UserRegistration from "../Users/UserRegistration";
-import RoleToggle from "./RoleToggle";
+import UserRegistration from "../../Users/UserRegistration";
+import RoleToggle from "../Templates/RoleToggle";
 import { useState } from "react";
-import AuthorRegistration from "../Author/AuthorRegistration";
-import "../../css/General/Register.css";
+import AuthorRegistration from "../../Author/AuthorRegistration";
+import "../../../css/General/Register.css";
 
 function Register() {
 
