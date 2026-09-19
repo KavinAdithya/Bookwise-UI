@@ -15,6 +15,8 @@ import Authors from './Admin/Authors';
 import AuthorDetailView from './Admin/AuthorDetailView';
 import AuthorBooks from './Author/AuthorBooks';
 import AuthorBookDetail from './Author/AuthorBookDetail';
+import Users from './Admin/Users';
+import UserDetail from './Admin/UserDetail';
 
 function BookWiseApp() {
     return <>
@@ -101,6 +103,24 @@ function BookWiseApp() {
                                 <AuthorizationRoute
                                     allowedRoles={["ADMIN"]}>
                                     <AuthorDetailView/>
+                                </AuthorizationRoute>
+                            }/>
+
+                        <Route
+                            path='/admin/users'
+                            element={ 
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <Users/>
+                                </AuthorizationRoute>
+                            }/>
+                        
+                        <Route
+                            path='/admin/users/:userId'
+                            element={ 
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <UserDetail/>
                                 </AuthorizationRoute>
                             }/>
 

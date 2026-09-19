@@ -1,0 +1,365 @@
+.user-detail-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 48px 60px;
+    box-sizing: border-box;
+    color: #1F2933;
+}
+
+
+/* =========================
+   Header
+   ========================= */
+
+.user-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-bottom: 32px;
+}
+
+.user-detail-label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.user-detail-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.user-detail-header p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 16px;
+}
+
+
+/* =========================
+   Back Button
+   ========================= */
+
+.user-back-btn {
+    padding: 10px 18px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 7px;
+
+    background: #FFFFFF;
+    color: #173B4D;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.user-back-btn:hover {
+    border-color: #173B4D;
+    background: #F3F6F7;
+}
+
+
+/* =========================
+   Profile Summary
+   ========================= */
+
+.user-profile-card {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 24px 28px;
+    margin-bottom: 24px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+.user-avatar {
+    width: 64px;
+    height: 64px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #173B4D;
+    color: #FFFFFF;
+
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.user-profile-info {
+    flex: 1;
+}
+
+.user-profile-info h2 {
+    margin: 0 0 5px;
+
+    color: #173B4D;
+    font-size: 22px;
+}
+
+.user-profile-info p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 14px;
+}
+
+.user-profile-status {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+
+/* =========================
+   Detail Cards
+   ========================= */
+
+.user-detail-card {
+    margin-bottom: 24px;
+
+    background: #FFFFFF;
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+.detail-card-header {
+    padding: 22px 28px;
+
+    border-bottom: 1px solid #E5E1D8;
+}
+
+.detail-card-header h2 {
+    margin: 0 0 5px;
+
+    color: #173B4D;
+    font-size: 19px;
+}
+
+.detail-card-header p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 14px;
+}
+
+
+/* =========================
+   Information Grid
+   ========================= */
+
+.user-info-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 0;
+}
+
+.user-info-item {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+
+    padding: 20px 28px;
+
+    border-bottom: 1px solid #E5E1D8;
+}
+
+.user-info-item:nth-last-child(-n + 2) {
+    border-bottom: none;
+}
+
+.user-info-item span:first-child {
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.user-info-item strong {
+    color: #1F2933;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.user-info-item.full-width {
+    grid-column: 1 / -1;
+}
+
+
+/* =========================
+   Role Badge
+   ========================= */
+
+.user-role {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 60px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-role.user {
+    background: #E8EEF1;
+    color: #173B4D;
+}
+
+.user-role.author {
+    background: #FFF4D6;
+    color: #996C00;
+}
+
+.user-role.admin {
+    background: #E5F3EC;
+    color: #28734A;
+}
+
+
+/* =========================
+   Status Badge
+   ========================= */
+
+.user-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+    min-width: 65px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.user-status.active {
+    background: #E5F3EC;
+    color: #28734A;
+}
+
+.user-status.inactive {
+    background: #FBE9E7;
+    color: #B42318;
+}
+
+
+/* =========================
+   Subscription
+   ========================= */
+
+.subscription-detail {
+    display: flex;
+    gap: 60px;
+
+    padding: 24px 28px;
+}
+
+.subscription-detail div {
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.subscription-detail span {
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.subscription-detail strong {
+    color: #173B4D;
+    font-size: 16px;
+}
+
+
+/* =========================
+   Loading
+   ========================= */
+
+.user-detail-loading {
+    min-height: 400px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #6B7280;
+    font-size: 15px;
+}
+
+
+/* =========================
+   Responsive
+   ========================= */
+
+@media (max-width: 750px) {
+
+    .user-detail-page {
+        padding: 30px 24px;
+    }
+
+    .user-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .user-profile-card {
+        flex-wrap: wrap;
+    }
+
+    .user-profile-status {
+        width: 100%;
+    }
+
+    .user-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .user-info-item:nth-last-child(-n + 2) {
+        border-bottom: 1px solid #E5E1D8;
+    }
+
+    .user-info-item:last-child {
+        border-bottom: none;
+    }
+
+    .subscription-detail {
+        flex-direction: column;
+        gap: 20px;
+    }
+}

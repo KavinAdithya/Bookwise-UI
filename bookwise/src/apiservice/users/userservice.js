@@ -15,3 +15,13 @@ export function authenitcateUser(userCredential) {
 export function getCurrentUserDetails() {
     return apiClient.get("/users/me");
 }
+
+export function getAllUsers(filter) {
+    return apiClient.get("/users/admin", {params: {
+        "filterIsActive" : filter
+    }})
+}
+
+export function getUserById(userId) {
+    return apiClient.get(`/users/admin/user/${userId}`)
+}
