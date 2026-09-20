@@ -1,25 +1,36 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import { getAuthorById } from "../../apiservice/authors/AuthorService";
+import { useNavigate, useParams } from "react-router-dom";
+import {
+    getAuthorById,
+    approveAuthor,
+    rejectAuthor
+} from "../../apiservice/authors/AuthorService";
+
 import "../../css/Admin/AuthorDetailView.css";
-import { approveAuthor, rejectAuthor } from "../../apiservice/authors/AuthorService";
 
 function AuthorDetailView() {
 
     const { authorId } = useParams();
+    const navigate = useNavigate();
+
     const [author, setAuthor] = useState(null);
 
     useEffect(() => {
 
         async function fetchAuthor() {
             try {
+
                 const response = await getAuthorById(authorId);
+
                 setAuthor(response.data.data);
+
             } catch (error) {
+
                 console.error(
                     "Error fetching author details:",
                     error
                 );
+
             }
         }
 
@@ -28,43 +39,133 @@ function AuthorDetailView() {
     }, [authorId]);
 
 
-    // Loading state
+    async function handleApprove() {
+
+        try {
+
+            await approveAuthor(author.id);
+
+            setAuthor({
+                ...author,
+                status: "APPROVED"
+            });
+
+        } catch (error) {
+
+            console.error(
+                "Error approving author:",
+                error
+            );
+
+        }
+    }
+
+
+    async function handleReject() {
+
+        try {
+
+            await rejectAuthor(author.id);
+
+            setAuthor({
+                ...author,
+                status: "REJECTED"
+            });
+
+        } catch (error) {
+
+            console.error(
+                "Error rejecting author:",
+                error
+            );
+
+        }
+    }
+
+
     if (!author) {
-        return <div>Loading...</div>;
+        return (
+            <div className="author-detail-loading">
+                Loading author details...
+            </div>
+        );
     }
 
-    async function handleApprove(authorId) {
-        try {
-            await approveAuthor(authorId);
-        } catch (error) {
-            console.error("Error approving author:", error);
-        }
-    }
-
-    async function handleReject(authorId) {
-        try {
-            await rejectAuthor(authorId);
-        } catch (error) {
-            console.error("Error rejecting author:", error);
-        }
-    }
 
     return (
+
         <div className="author-detail-page">
+
+
+            {/* =========================
+                Page Header
+            ========================= */}
+
+            <div className="author-detail-page-header">
+
+                <div>
+
+                    <span className="author-detail-label">
+                        ADMIN / AUTHORS
+                    </span>
+
+                    <h1>Author Review</h1>
+
+                    <p>
+                        Review author registration information
+                    </p>
+
+                </div>
+
+
+                <button
+                    className="author-back-btn"
+                    onClick={() => navigate("/admin/authors")}
+                >
+                    ← Back to Authors
+                </button>
+
+            </div>
+
+
+            {/* =========================
+                Main Card
+            ========================= */}
 
             <div className="author-detail-card">
 
-                <div className="author-detail-header">
 
-                    <div>
-                        <h1>Author Details</h1>
-                        <p>
-                            Review author registration information
-                        </p>
+                {/* =========================
+                    Author Summary
+                ========================= */}
+
+                <div className="author-summary">
+
+                    <div className="author-avatar">
+
+                        {author.authorName
+                            ?.charAt(0)
+                            .toUpperCase()
+                        }
+
                     </div>
 
+
+                    <div className="author-summary-info">
+
+                        <h2>
+                            {author.authorName}
+                        </h2>
+
+                        <p>
+                            @{author.username}
+                        </p>
+
+                    </div>
+
+
                     <span
-                        className={`status ${author.status.toLowerCase()}`}
+                        className={`author-status ${author.status.toLowerCase()}`}
                     >
                         {author.status}
                     </span>
@@ -72,35 +173,75 @@ function AuthorDetailView() {
                 </div>
 
 
-                <div className="author-info">
+                {/* =========================
+                    Personal Information
+                ========================= */}
 
-                    <h2>Personal Information</h2>
+                <div className="author-info-section">
 
-                    <div className="info-grid">
+                    <div className="author-section-header">
 
-                        <div className="info-item">
-                            <label>Name</label>
-                            <p>{author.authorName}</p>
+                        <h3>Personal Information</h3>
+
+                        <p>
+                            Registration and contact information
+                        </p>
+
+                    </div>
+
+
+                    <div className="author-info-grid">
+
+
+                        <div className="author-info-item">
+
+                            <span>Name</span>
+
+                            <strong>
+                                {author.authorName}
+                            </strong>
+
                         </div>
 
-                        <div className="info-item">
-                            <label>Email</label>
-                            <p>{author.email}</p>
+
+                        <div className="author-info-item">
+
+                            <span>Email</span>
+
+                            <strong>
+                                {author.email}
+                            </strong>
+
                         </div>
 
-                        <div className="info-item">
-                            <label>Username</label>
-                            <p>{author.username}</p>
+
+                        <div className="author-info-item">
+
+                            <span>Username</span>
+
+                            <strong>
+                                {author.username}
+                            </strong>
+
                         </div>
 
-                        <div className="info-item">
-                            <label>Contact</label>
-                            <p>{author.contact}</p>
+
+                        <div className="author-info-item">
+
+                            <span>Contact</span>
+
+                            <strong>
+                                {author.contact || "Not provided"}
+                            </strong>
+
                         </div>
 
-                        <div className="info-item">
-                            <label>Registered Date</label>
-                            <p>
+
+                        <div className="author-info-item">
+
+                            <span>Registered Date</span>
+
+                            <strong>
                                 {new Date(
                                     author.createdAt
                                 ).toLocaleDateString("en-US", {
@@ -108,36 +249,92 @@ function AuthorDetailView() {
                                     day: "numeric",
                                     year: "numeric"
                                 })}
-                            </p>
+                            </strong>
+
                         </div>
 
-                        <div className="info-item full-width">
-                            <label>Address</label>
-                            <p>{author.address}</p>
+
+                        <div className="author-info-item author-full-width">
+
+                            <span>Address</span>
+
+                            <strong>
+                                {author.address || "Not provided"}
+                            </strong>
+
                         </div>
+
 
                     </div>
 
                 </div>
 
 
+                {/* =========================
+                    Review Decision
+                ========================= */}
+
                 {author.status === "PENDING" && (
 
-                    <div className="author-actions">
+                    <div className="author-review-section">
 
-                        <button
-                            className="reject-btn"
-                            onClick={() => handleReject(author.id)}
-                        >
-                            Reject
-                        </button>
+                        <div className="author-review-content">
 
-                        <button
-                            className="approve-btn"
-                            onClick={() => handleApprove(author.id)}
+                            <h3>
+                                Review Decision
+                            </h3>
+
+                            <p>
+                                Review the information above before
+                                approving or rejecting this author
+                                registration request.
+                            </p>
+
+                        </div>
+
+
+                        <div className="author-review-actions">
+
+                            <button
+                                className="author-reject-btn"
+                                onClick={handleReject}
+                            >
+                                Reject
+                            </button>
+
+
+                            <button
+                                className="author-approve-btn"
+                                onClick={handleApprove}
+                            >
+                                Approve
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                )}
+
+
+                {/* =========================
+                    Completed Status
+                ========================= */}
+
+                {author.status !== "PENDING" && (
+
+                    <div className="author-completed-section">
+
+                        <span
+                            className={`author-status ${author.status.toLowerCase()}`}
                         >
-                            Approve
-                        </button>
+                            {author.status}
+                        </span>
+
+                        <p>
+                            This author registration request has already
+                            been reviewed.
+                        </p>
 
                     </div>
 

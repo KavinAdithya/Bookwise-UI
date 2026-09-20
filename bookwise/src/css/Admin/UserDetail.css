@@ -1,5 +1,5 @@
 .user-detail-page {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 40px 48px 60px;
     box-sizing: border-box;
@@ -23,7 +23,7 @@
     margin-bottom: 8px;
 
     color: #D69E4A;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
     letter-spacing: 1px;
 }
@@ -32,7 +32,7 @@
     margin: 0 0 8px;
 
     color: #173B4D;
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 700;
 }
 
@@ -40,7 +40,7 @@
     margin: 0;
 
     color: #6B7280;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -58,7 +58,7 @@
     color: #173B4D;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 
     cursor: pointer;
@@ -106,7 +106,7 @@
     background: #173B4D;
     color: #FFFFFF;
 
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 700;
 }
 
@@ -118,14 +118,14 @@
     margin: 0 0 5px;
 
     color: #173B4D;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .user-profile-info p {
     margin: 0;
 
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .user-profile-status {
@@ -159,14 +159,14 @@
     margin: 0 0 5px;
 
     color: #173B4D;
-    font-size: 19px;
+    font-size: 21px;
 }
 
 .detail-card-header p {
     margin: 0;
 
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -197,12 +197,12 @@
 
 .user-info-item span:first-child {
     color: #6B7280;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .user-info-item strong {
     color: #1F2933;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 500;
 }
 
@@ -227,7 +227,7 @@
 
     border-radius: 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -263,7 +263,7 @@
 
     border-radius: 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -297,12 +297,12 @@
 
 .subscription-detail span {
     color: #6B7280;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .subscription-detail strong {
     color: #173B4D;
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -318,7 +318,7 @@
     justify-content: center;
 
     color: #6B7280;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 

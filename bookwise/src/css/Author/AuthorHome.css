@@ -3,7 +3,7 @@
 ========================= */
 
 .author-home {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 40px;
 
@@ -33,7 +33,7 @@
 
     color: #B7791F;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -44,7 +44,7 @@
 
     color: #173B4D;
 
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 700;
 }
 
@@ -115,7 +115,7 @@
 }
 
 .stat-card span {
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .stat-card h2 {
@@ -123,7 +123,7 @@
 
     color: #173B4D;
 
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .stat-card p {
@@ -253,7 +253,7 @@
 
     color: #173B4D;
 
-    font-size: 17px;
+    font-size: 19px;
 }
 
 .book-details p {
@@ -261,7 +261,7 @@
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -276,7 +276,7 @@
 
     border-radius: 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -332,7 +332,7 @@
 
     color: #F1D39A;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
 
     letter-spacing: 2px;
@@ -343,7 +343,7 @@
 
     color: #FFFFFF;
 
-    font-size: 36px;
+    font-size: 38px;
 }
 
 .revenue-section p {
@@ -424,11 +424,11 @@
 }
 
 .action-grid button:first-child {
-    font-size: 30px;
+    font-size: 32px;
 }
 
 .action-grid span {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -464,7 +464,7 @@
     }
 
     .author-welcome h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .author-stats {

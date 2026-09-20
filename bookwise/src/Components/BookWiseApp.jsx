@@ -17,6 +17,9 @@ import AuthorBooks from './Author/AuthorBooks';
 import AuthorBookDetail from './Author/AuthorBookDetail';
 import Users from './Admin/Users';
 import UserDetail from './Admin/UserDetail';
+import AdminBooks from './Admin/AdminBooks';
+import AdminBookDetail from './Admin/AdminBookDetail';
+import UserBooks from './Users/UserBooks';
 
 function BookWiseApp() {
     return <>
@@ -43,6 +46,15 @@ function BookWiseApp() {
                             <AuthorizationRoute
                                     allowedRoles={["USER"]}>
                                 <UserHome/>
+                            </AuthorizationRoute>
+                            }/>
+
+                         <Route
+                            path='/books'
+                            element={
+                            <AuthorizationRoute
+                                    allowedRoles={["USER"]}>
+                                <UserBooks/>
                             </AuthorizationRoute>
                             }/>
                         
@@ -121,6 +133,24 @@ function BookWiseApp() {
                                 <AuthorizationRoute
                                     allowedRoles={["ADMIN"]}>
                                     <UserDetail/>
+                                </AuthorizationRoute>
+                            }/>
+                        
+                        <Route
+                            path='/admin/books'
+                            element={ 
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <AdminBooks/>
+                                </AuthorizationRoute>
+                            }/>
+                        
+                        <Route
+                            path='/admin/books/:bookId'
+                            element={ 
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <AdminBookDetail/>
                                 </AuthorizationRoute>
                             }/>
 

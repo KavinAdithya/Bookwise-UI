@@ -3,12 +3,8 @@
 ========================= */
 
 .author-books-page {
-    min-height: 100vh;
-
-    padding: 30px;
-
-    background-color: #F7F5F0;
-
+        width: 100%;
+    padding: 40px 30px 50px;
     box-sizing: border-box;
 }
 
@@ -30,7 +26,7 @@
 
     color: #173B4D;
 
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -39,7 +35,7 @@
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -56,7 +52,7 @@
     background-color: #173B4D;
     color: #FFFFFF;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -103,7 +99,7 @@
     background-color: #FFFFFF;
     color: #1F2933;
 
-    font-size: 14px;
+    font-size: 16px;
 
     box-sizing: border-box;
 
@@ -140,7 +136,7 @@
     background-color: #FFFFFF;
     color: #555F65;
 
-    font-size: 14px;
+    font-size: 16px;
 
     cursor: pointer;
 
@@ -192,7 +188,7 @@
 ========================= */
 
 .book-row > div {
-    font-size: 14px;
+    font-size: 16px;
 
     color: #334155;
 }
@@ -219,7 +215,7 @@
 
     border-radius: 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -264,7 +260,7 @@
     background-color: #FFFFFF;
     color: #173B4D;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
 
     cursor: pointer;

@@ -3,7 +3,7 @@
 ========================= */
 
 .user-home {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 40px;
 
@@ -40,7 +40,7 @@
 
     color: #D69E4A;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -51,7 +51,7 @@
 
     color: #173B4D;
 
-    font-size: 42px;
+    font-size: 44px;
     font-weight: 700;
     letter-spacing: -0.7px;
 }
@@ -61,7 +61,7 @@
 
     color: #6B7280;
 
-    font-size: 17px;
+    font-size: 19px;
     line-height: 1.6;
 }
 
@@ -83,7 +83,7 @@
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     transition:
@@ -118,7 +118,7 @@
 
     color: #173B4D;
 
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
 }
 
@@ -127,7 +127,7 @@
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -184,7 +184,7 @@
 
     background-color: #F1EFE9;
 
-    font-size: 70px;
+    font-size: 72px;
 }
 
 .user-book-cover img {
@@ -204,7 +204,7 @@
 
     color: #173B4D;
 
-    font-size: 16px;
+    font-size: 18px;
     font-weight: 600;
 }
 
@@ -213,7 +213,7 @@
 
     color: #6B7280;
 
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.5;
 }
 
@@ -244,7 +244,7 @@
     text-decoration: none;
     color: #173B4D;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     box-sizing: border-box;
@@ -295,7 +295,7 @@
 
     color: #FFFFFF;
 
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .subscription-card p {
@@ -319,7 +319,7 @@
 
     text-decoration: none;
 
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 600;
 
     transition:
@@ -367,7 +367,7 @@
     }
 
     .home-welcome h1 {
-        font-size: 34px;
+        font-size: 36px;
     }
 
     .book-grid {
@@ -394,11 +394,11 @@
     }
 
     .home-welcome h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .home-welcome p {
-        font-size: 15px;
+        font-size: 17px;
     }
 
     .book-grid {

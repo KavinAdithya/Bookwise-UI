@@ -13,7 +13,7 @@
     border: none;
     background: transparent;
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
 
@@ -72,14 +72,14 @@
 
 .book-main-info h1 {
     margin: 0 0 10px;
-    font-size: 30px;
+    font-size: 32px;
     color: #173B4D;
 }
 
 .book-category {
     margin: 0 0 18px;
     color: #6B7280;
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
@@ -89,7 +89,7 @@
     display: inline-block;
     padding: 6px 12px;
     border-radius: 20px;
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -118,7 +118,7 @@
 
 .book-section h2 {
     margin: 0 0 18px;
-    font-size: 18px;
+    font-size: 20px;
     color: #173B4D;
 }
 
@@ -128,7 +128,7 @@
 .book-description {
     margin: 0;
     color: #6B7280;
-    font-size: 15px;
+    font-size: 17px;
     line-height: 1.7;
 }
 
@@ -148,7 +148,7 @@
 }
 
 .book-info-item label {
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
     color: #6B7280;
     text-transform: uppercase;
@@ -156,7 +156,7 @@
 
 .book-info-item p {
     margin: 0;
-    font-size: 15px;
+    font-size: 17px;
     color: #1F2933;
 }
 
@@ -173,7 +173,7 @@
 .book-detail-actions button {
     padding: 10px 18px;
     border-radius: 6px;
-    font-size: 14px;
+    font-size: 16px;
     cursor: pointer;
 }
 

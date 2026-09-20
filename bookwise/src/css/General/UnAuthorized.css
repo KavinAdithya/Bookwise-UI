@@ -48,7 +48,7 @@
 
     color: #173B4D;
 
-    font-size: 72px;
+    font-size: 74px;
     font-weight: 700;
 
     line-height: 1;
@@ -65,7 +65,7 @@
 
     color: #1F2933;
 
-    font-size: 26px;
+    font-size: 28px;
     font-weight: 600;
 }
 
@@ -81,7 +81,7 @@
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.6;
 }
 
@@ -100,7 +100,7 @@
     color: #FFFFFF;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -135,10 +135,10 @@
     }
 
     .unauthorized-code {
-        font-size: 60px;
+        font-size: 62px;
     }
 
     .unauthorized-card h1 {
-        font-size: 23px;
+        font-size: 25px;
     }
 }

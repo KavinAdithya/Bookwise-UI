@@ -33,7 +33,7 @@
 .login-header h1 {
     margin: 0 0 25px;
     color: #173B4D;
-    font-size: 27px;
+    font-size: 29px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
@@ -41,14 +41,14 @@
 .login-header h2 {
     margin: 0 0 8px;
     color: #1F2933;
-    font-size: 24px;
+    font-size: 26px;
     font-weight: 600;
 }
 
 .login-header p {
     margin: 0;
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 1.5;
 }
 
@@ -72,7 +72,7 @@
 
 .login-form-group label {
     color: #334155;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 }
 
@@ -85,7 +85,7 @@
     background-color: #FFFFFF;
     color: #1F2933;
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     box-sizing: border-box;
     transition:
         border-color 0.2s ease,
@@ -110,7 +110,7 @@
     border-radius: 6px;
     background-color: #FBE9E7;
     color: #B42318;
-    font-size: 13px;
+    font-size: 15px;
     line-height: 1.4;
 }
 
@@ -125,7 +125,7 @@
     border-radius: 7px;
     background-color: #173B4D;
     color: #FFFFFF;
-    font-size: 15px;
+    font-size: 17px;
     font-weight: 600;
     cursor: pointer;
     transition:
@@ -160,7 +160,7 @@
 .login-footer p {
     margin: 0;
     color: #6B7280;
-    font-size: 13px;
+    font-size: 15px;
 }
 
 .login-footer button {
@@ -169,7 +169,7 @@
     background: transparent;
     color: #173B4D;
     font-family: inherit;
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
     cursor: pointer;
 }
@@ -192,10 +192,10 @@
     }
 
     .login-header h1 {
-        font-size: 25px;
+        font-size: 27px;
     }
 
     .login-header h2 {
-        font-size: 22px;
+        font-size: 24px;
     }
 }

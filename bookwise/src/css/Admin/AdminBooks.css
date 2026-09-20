@@ -1,34 +1,43 @@
-.admin-users-page {
+.admin-books-page {
     max-width: 1550px;
     margin: 0 auto;
-    padding: 40px 48px;
+    padding: 40px 48px 60px;
     box-sizing: border-box;
     color: #1F2933;
 }
 
 
 /* =========================
-   Page Header
+   Header
    ========================= */
 
-.users-page-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 36px;
+.admin-books-header {
+    margin-bottom: 32px;
 }
 
-.users-page-header h1 {
+.admin-books-label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.admin-books-header h1 {
     margin: 0 0 8px;
+
     color: #173B4D;
-    font-size: 40px;
+    font-size: 38px;
     font-weight: 700;
 }
 
-.users-page-header p {
+.admin-books-header p {
     margin: 0;
+
     color: #6B7280;
-    font-size: 19px;
+    font-size: 18px;
 }
 
 
@@ -36,18 +45,22 @@
    Toolbar
    ========================= */
 
-.users-toolbar {
+.admin-books-toolbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
+
     gap: 20px;
-    margin-bottom: 32px;
+    margin-bottom: 28px;
 }
 
-.users-toolbar input {
+.admin-books-toolbar input {
     width: 420px;
-    height: 48px;
+    height: 46px;
+
     padding: 0 14px;
+
+    box-sizing: border-box;
 
     border: 1px solid #D9D5CC;
     border-radius: 8px;
@@ -56,21 +69,21 @@
     color: #1F2933;
 
     font-family: inherit;
-    font-size: 17px;
+    font-size: 16px;
 
     outline: none;
-    box-sizing: border-box;
 
     transition: border-color 0.2s ease,
                 box-shadow 0.2s ease;
 }
 
-.users-toolbar input::placeholder {
+.admin-books-toolbar input::placeholder {
     color: #9CA3AF;
 }
 
-.users-toolbar input:focus {
+.admin-books-toolbar input:focus {
     border-color: #173B4D;
+
     box-shadow: 0 0 0 3px rgba(23, 59, 77, 0.08);
 }
 
@@ -79,113 +92,15 @@
    Filters
    ========================= */
 
-.user-filters {
+.admin-book-filters {
     display: flex;
     gap: 10px;
 }
 
-.user-filters button {
-    min-width: 90px;
-    height: 42px;
+.admin-book-filters button {
+    height: 40px;
 
-    padding: 0 18px;
-
-    border: 1px solid #D9D5CC;
-    border-radius: 8px;
-
-    background: #FFFFFF;
-    color: #173B4D;
-
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: 500;
-
-    cursor: pointer;
-
-    transition: all 0.2s ease;
-}
-
-.user-filters button:hover {
-    border-color: #173B4D;
-    background: #F3F6F7;
-}
-
-.user-filters button.active {
-    background: #173B4D;
-    border-color: #173B4D;
-    color: #FFFFFF;
-}
-
-
-/* =========================
-   User Role
-   ========================= */
-
-.user-role {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 70px;
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.user-role.user {
-    background: #E8EEF1;
-    color: #173B4D;
-}
-
-.user-role.author {
-    background: #FFF4D6;
-    color: #996C00;
-}
-
-.user-role.admin {
-    background: #E5F3EC;
-    color: #28734A;
-}
-
-
-/* =========================
-   User Status
-   ========================= */
-
-.user-status {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-
-    min-width: 70px;
-    padding: 6px 12px;
-
-    border-radius: 20px;
-
-    font-size: 14px;
-    font-weight: 600;
-}
-
-.user-status.active {
-    background: #E5F3EC;
-    color: #28734A;
-}
-
-.user-status.inactive {
-    background: #FBE9E7;
-    color: #B42318;
-}
-
-
-/* =========================
-   View Button
-   ========================= */
-
-.view-user-btn {
-    padding: 8px 16px;
+    padding: 0 16px;
 
     border: 1px solid #D9D5CC;
     border-radius: 7px;
@@ -202,7 +117,98 @@
     transition: all 0.2s ease;
 }
 
-.view-user-btn:hover {
+.admin-book-filters button:hover {
+    border-color: #173B4D;
+    background: #F3F6F7;
+}
+
+.admin-book-filters button.active {
+    border-color: #173B4D;
+    background: #173B4D;
+    color: #FFFFFF;
+}
+
+
+/* =========================
+   Cover
+   ========================= */
+
+.admin-book-cover-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.admin-book-cover-cell img {
+    width: 42px;
+    height: 56px;
+
+    object-fit: cover;
+
+    display: block;
+
+    border-radius: 4px;
+}
+
+
+/* =========================
+   Status
+   ========================= */
+
+.admin-book-status {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 75px;
+
+    padding: 6px 12px;
+
+    border-radius: 20px;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.admin-book-status.pending {
+    background: #FFF4D6;
+    color: #996C00;
+}
+
+.admin-book-status.published {
+    background: #E5F3EC;
+    color: #28734A;
+}
+
+.admin-book-status.rejected {
+    background: #FBE9E7;
+    color: #B42318;
+}
+
+
+/* =========================
+   View / Review Button
+   ========================= */
+
+.admin-view-book-btn {
+    padding: 8px 15px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 7px;
+
+    background: #FFFFFF;
+    color: #173B4D;
+
+    font-family: inherit;
+    font-size: 15px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition: all 0.2s ease;
+}
+
+.admin-view-book-btn:hover {
     border-color: #173B4D;
     background: #F3F6F7;
 }
@@ -212,22 +218,22 @@
    Responsive
    ========================= */
 
-@media (max-width: 900px) {
+@media (max-width: 950px) {
 
-    .admin-users-page {
-        padding: 30px 24px;
+    .admin-books-page {
+        padding: 30px 24px 50px;
     }
 
-    .users-toolbar {
+    .admin-books-toolbar {
         flex-direction: column;
         align-items: stretch;
     }
 
-    .users-toolbar input {
+    .admin-books-toolbar input {
         width: 100%;
     }
 
-    .user-filters {
-        justify-content: flex-start;
+    .admin-book-filters {
+        overflow-x: auto;
     }
 }

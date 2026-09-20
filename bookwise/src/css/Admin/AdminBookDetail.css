@@ -1,5 +1,6 @@
-.author-detail-page {
-    width: 100%;
+.admin-book-detail-page {
+    max-width: 1450px;
+    margin: 0 auto;
     padding: 40px 48px 60px;
     box-sizing: border-box;
     color: #1F2933;
@@ -10,7 +11,7 @@
    Page Header
    ========================= */
 
-.author-detail-page-header {
+.admin-book-detail-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
@@ -18,33 +19,33 @@
     margin-bottom: 32px;
 }
 
-.author-detail-label {
+.admin-book-detail-label {
     display: block;
     margin-bottom: 8px;
 
     color: #D69E4A;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 700;
 
     letter-spacing: 1px;
 }
 
-.author-detail-page-header h1 {
+.admin-book-detail-header h1 {
     margin: 0 0 8px;
 
     color: #173B4D;
 
-    font-size: 36px;
+    font-size: 38px;
     font-weight: 700;
 }
 
-.author-detail-page-header p {
+.admin-book-detail-header p {
     margin: 0;
 
     color: #6B7280;
 
-    font-size: 16px;
+    font-size: 18px;
 }
 
 
@@ -52,7 +53,7 @@
    Back Button
    ========================= */
 
-.author-back-btn {
+.admin-book-back-btn {
     padding: 10px 18px;
 
     border: 1px solid #D9D5CC;
@@ -62,7 +63,7 @@
     color: #173B4D;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 500;
 
     cursor: pointer;
@@ -72,7 +73,7 @@
         border-color 0.2s ease;
 }
 
-.author-back-btn:hover {
+.admin-book-back-btn:hover {
     background: #F3F6F7;
     border-color: #173B4D;
 }
@@ -82,80 +83,104 @@
    Main Card
    ========================= */
 
-.author-detail-card {
-    width: 100%;
+.admin-book-detail-card {
+    overflow: hidden;
 
     background: #FFFFFF;
 
     border: 1px solid #E5E1D8;
     border-radius: 10px;
 
-    overflow: hidden;
-
-    box-shadow:
-        0 4px 14px rgba(23, 59, 77, 0.04);
+    box-shadow: 0 4px 14px rgba(23, 59, 77, 0.04);
 }
 
 
 /* =========================
-   Author Summary
+   Book Summary
    ========================= */
 
-.author-summary {
+.admin-book-summary {
     display: flex;
-    align-items: center;
+    gap: 32px;
 
-    gap: 18px;
-
-    padding: 28px 32px;
+    padding: 32px;
 
     border-bottom: 1px solid #E5E1D8;
 }
 
 
-/* Avatar */
+/* =========================
+   Cover
+   ========================= */
 
-.author-avatar {
-    width: 64px;
-    height: 64px;
+.admin-book-cover {
+    width: 160px;
+    height: 225px;
+
+    flex-shrink: 0;
 
     display: flex;
     align-items: center;
     justify-content: center;
+}
 
-    flex-shrink: 0;
+.admin-book-cover img {
+    width: 160px;
+    height: 225px;
 
-    border-radius: 50%;
+    display: block;
 
-    background: #173B4D;
-    color: #FFFFFF;
+    object-fit: cover;
 
-    font-size: 25px;
-    font-weight: 700;
+    border-radius: 7px;
+
+    box-shadow: 0 4px 12px rgba(23, 59, 77, 0.12);
 }
 
 
-/* Summary Info */
+/* =========================
+   Summary Content
+   ========================= */
 
-.author-summary-info {
+.admin-book-summary-content {
     flex: 1;
+    min-width: 0;
 }
 
-.author-summary-info h2 {
-    margin: 0 0 5px;
+.admin-book-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.admin-book-title-row h2 {
+    margin: 0 0 7px;
 
     color: #173B4D;
 
-    font-size: 23px;
+    font-size: 30px;
     font-weight: 700;
 }
 
-.author-summary-info p {
+.admin-book-author {
     margin: 0;
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 17px;
+}
+
+.admin-book-description {
+    max-width: 800px;
+
+    margin: 24px 0 0;
+
+    color: #4B5563;
+
+    font-size: 17px;
+    line-height: 1.7;
 }
 
 
@@ -163,68 +188,68 @@
    Status
    ========================= */
 
-.author-status {
+.admin-book-status {
     display: inline-flex;
+
     align-items: center;
     justify-content: center;
 
     min-width: 75px;
 
-    padding: 7px 14px;
+    padding: 6px 12px;
 
     border-radius: 20px;
 
-    font-size: 12px;
-    font-weight: 700;
+    font-size: 14px;
+    font-weight: 600;
 
     white-space: nowrap;
 }
 
-.author-status.pending {
+.admin-book-status.pending {
     background: #FFF4D6;
     color: #996C00;
 }
 
-.author-status.approved {
+.admin-book-status.published {
     background: #E5F3EC;
     color: #28734A;
 }
 
-.author-status.rejected {
+.admin-book-status.rejected {
     background: #FBE9E7;
     color: #B42318;
 }
 
 
 /* =========================
-   Information Section
+   Section
    ========================= */
 
-.author-info-section {
+.admin-book-section {
     padding: 28px 32px;
 
     border-bottom: 1px solid #E5E1D8;
 }
 
-.author-section-header {
+.admin-book-section-header {
     margin-bottom: 20px;
 }
 
-.author-section-header h3 {
+.admin-book-section-header h3 {
     margin: 0 0 5px;
 
     color: #173B4D;
 
-    font-size: 19px;
-    font-weight: 700;
+    font-size: 20px;
 }
 
-.author-section-header p {
+.admin-book-section-header p {
     margin: 0;
 
     color: #6B7280;
 
-    font-size: 14px;
+    font-size: 15px;
 }
 
 
@@ -232,87 +257,45 @@
    Information Grid
    ========================= */
 
-.author-info-grid {
+.admin-book-info-grid {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
+    grid-template-columns: repeat(4, 1fr);
 
-    gap: 0;
+    overflow: hidden;
 
     border: 1px solid #E5E1D8;
     border-radius: 8px;
-
-    overflow: hidden;
 }
 
-
-/* Individual Item */
-
-.author-info-item {
+.admin-book-info-item {
     display: flex;
     flex-direction: column;
 
-    gap: 7px;
+    gap: 8px;
 
-    min-height: 75px;
+    min-height: 70px;
 
     padding: 18px 20px;
 
-    box-sizing: border-box;
-
     border-right: 1px solid #E5E1D8;
-    border-bottom: 1px solid #E5E1D8;
 }
 
-
-/* Remove right border from even items */
-
-.author-info-item:nth-child(even) {
+.admin-book-info-item:last-child {
     border-right: none;
 }
 
-
-/* Last two items */
-
-.author-info-item:nth-last-child(-n + 2) {
-    border-bottom: none;
-}
-
-
-/* Label */
-
-.author-info-item span {
+.admin-book-info-item > span:first-child {
     color: #6B7280;
 
-    font-size: 12px;
-    font-weight: 500;
-
-    text-transform: uppercase;
-
-    letter-spacing: 0.4px;
+    font-size: 14px;
 }
 
-
-/* Value */
-
-.author-info-item strong {
+.admin-book-info-item > strong {
     color: #1F2933;
 
-    font-size: 15px;
-    font-weight: 500;
-
-    line-height: 1.4;
-}
-
-
-/* Full Width */
-
-.author-info-item.author-full-width {
-    grid-column: 1 / -1;
-
-    border-right: none;
-    border-bottom: none;
+    font-size: 16px;
+    font-weight: 600;
 }
 
 
@@ -320,10 +303,10 @@
    Review Section
    ========================= */
 
-.author-review-section {
+.admin-book-review-section {
     display: flex;
-    align-items: center;
     justify-content: space-between;
+    align-items: center;
 
     gap: 30px;
 
@@ -332,38 +315,31 @@
     background: #F7F5F0;
 }
 
-
-.author-review-content {
-    flex: 1;
-}
-
-.author-review-content h3 {
+.admin-book-review-content h3 {
     margin: 0 0 6px;
 
     color: #173B4D;
 
-    font-size: 18px;
-    font-weight: 700;
+    font-size: 20px;
 }
 
-.author-review-content p {
-    max-width: 700px;
+.admin-book-review-content p {
+    max-width: 650px;
 
     margin: 0;
 
     color: #6B7280;
 
-    font-size: 14px;
-
+    font-size: 16px;
     line-height: 1.5;
 }
 
 
 /* =========================
-   Review Buttons
+   Review Actions
    ========================= */
 
-.author-review-actions {
+.admin-book-review-actions {
     display: flex;
 
     gap: 10px;
@@ -372,9 +348,11 @@
 }
 
 
-/* Reject */
+/* =========================
+   Reject
+   ========================= */
 
-.author-reject-btn {
+.admin-book-reject-btn {
     padding: 10px 22px;
 
     border: 1px solid #B42318;
@@ -384,8 +362,7 @@
     color: #B42318;
 
     font-family: inherit;
-
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -395,14 +372,16 @@
         border-color 0.2s ease;
 }
 
-.author-reject-btn:hover {
+.admin-book-reject-btn:hover {
     background: #FBE9E7;
 }
 
 
-/* Approve */
+/* =========================
+   Approve
+   ========================= */
 
-.author-approve-btn {
+.admin-book-approve-btn {
     padding: 10px 22px;
 
     border: 1px solid #28734A;
@@ -412,8 +391,7 @@
     color: #FFFFFF;
 
     font-family: inherit;
-
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -423,33 +401,9 @@
         border-color 0.2s ease;
 }
 
-.author-approve-btn:hover {
+.admin-book-approve-btn:hover {
     background: #205D3C;
     border-color: #205D3C;
-}
-
-
-/* =========================
-   Completed Review
-   ========================= */
-
-.author-completed-section {
-    display: flex;
-    align-items: center;
-
-    gap: 15px;
-
-    padding: 22px 32px;
-
-    background: #F7F5F0;
-}
-
-.author-completed-section p {
-    margin: 0;
-
-    color: #6B7280;
-
-    font-size: 14px;
 }
 
 
@@ -457,7 +411,7 @@
    Loading
    ========================= */
 
-.author-detail-loading {
+.admin-book-loading {
     min-height: 400px;
 
     display: flex;
@@ -466,7 +420,7 @@
 
     color: #6B7280;
 
-    font-size: 15px;
+    font-size: 17px;
 }
 
 
@@ -474,54 +428,62 @@
    Responsive
    ========================= */
 
-@media (max-width: 750px) {
+@media (max-width: 900px) {
 
-    .author-detail-page {
+    .admin-book-detail-page {
         padding: 30px 24px 50px;
     }
 
-    .author-detail-page-header {
+    .admin-book-info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .admin-book-info-item:nth-child(2) {
+        border-right: none;
+    }
+
+    .admin-book-review-section {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .admin-book-detail-header {
         flex-direction: column;
         align-items: flex-start;
 
         gap: 20px;
     }
 
-    .author-summary {
-        flex-wrap: wrap;
+    .admin-book-summary {
+        flex-direction: column;
     }
 
-    .author-summary .author-status {
-        margin-left: 82px;
+    .admin-book-title-row {
+        flex-direction: column;
     }
 
-    .author-info-grid {
+    .admin-book-info-grid {
         grid-template-columns: 1fr;
     }
 
-    .author-info-item {
-        border-right: none !important;
-        border-bottom: 1px solid #E5E1D8 !important;
+    .admin-book-info-item {
+        border-right: none;
+        border-bottom: 1px solid #E5E1D8;
     }
 
-    .author-info-item:last-child {
-        border-bottom: none !important;
+    .admin-book-info-item:last-child {
+        border-bottom: none;
     }
 
-    .author-info-item.author-full-width {
-        grid-column: auto;
-    }
-
-    .author-review-section {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .author-review-actions {
+    .admin-book-review-actions {
         width: 100%;
     }
 
-    .author-review-actions button {
+    .admin-book-review-actions button {
         flex: 1;
     }
 }

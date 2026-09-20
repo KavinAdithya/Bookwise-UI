@@ -24,7 +24,7 @@ function Header() {
             {
                 !isAuthenticated &&
                 <>
-                    <button onClick={loginNavigate}>
+                    <button onClick={loginNavigate} className="logout-btn">
                         Login
                     </button>
                 </>
@@ -35,7 +35,7 @@ function Header() {
                     <span className="username">
                         {user?.name}
                     </span>
-                    <button onClick={logout}>
+                    <button onClick={logout} className="logout-btn">
                         Logout
                     </button>
                 </>

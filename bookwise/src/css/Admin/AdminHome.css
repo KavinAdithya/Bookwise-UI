@@ -3,7 +3,7 @@
 ========================= */
 
 .admin-home {
-    max-width: 1200px;
+    max-width: 1450px;
     margin: 0 auto;
     padding: 40px;
     color: #1F2933;
@@ -29,7 +29,7 @@
     margin: 0;
     color: #D69E4A;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -39,7 +39,7 @@
     margin: 15px 0 10px;
 
     color: #173B4D;
-    font-size: 38px;
+    font-size: 40px;
     font-weight: 700;
     letter-spacing: -0.5px;
 }
@@ -83,21 +83,21 @@
 }
 
 .stat-card span {
-    font-size: 28px;
+    font-size: 30px;
 }
 
 .stat-card h2 {
     margin: 15px 0 5px;
 
     color: #173B4D;
-    font-size: 28px;
+    font-size: 30px;
     font-weight: 700;
 }
 
 .stat-card p {
     margin: 0;
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -120,13 +120,13 @@
 .section-header h2 {
     margin: 0 0 5px;
     color: #173B4D;
-    font-size: 22px;
+    font-size: 24px;
 }
 
 .section-header p {
     margin: 0;
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .section-header button {
@@ -138,7 +138,7 @@
     background-color: #FFFFFF;
     color: #173B4D;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
 
     cursor: pointer;
@@ -192,14 +192,14 @@
     margin: 0 0 5px;
 
     color: #1F2933;
-    font-size: 15px;
+    font-size: 16px;
 }
 
 .request-card p {
     margin: 0;
 
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 .request-card button {
@@ -211,7 +211,7 @@
     background-color: #173B4D;
     color: #FFFFFF;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 500;
 
     cursor: pointer;
@@ -238,7 +238,7 @@
 
     border-radius: 20px;
 
-    font-size: 12px;
+    font-size: 14px;
     font-weight: 600;
 }
 
@@ -271,20 +271,20 @@
 }
 
 .book-summary span {
-    font-size: 26px;
+    font-size: 28px;
 }
 
 .book-summary h3 {
     margin: 12px 0 5px;
 
     color: #173B4D;
-    font-size: 25px;
+    font-size: 27px;
 }
 
 .book-summary p {
     margin: 0;
     color: #6B7280;
-    font-size: 14px;
+    font-size: 16px;
 }
 
 
@@ -311,7 +311,7 @@
 
     color: #D69E4A;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -321,7 +321,7 @@
     margin: 10px 0;
 
     color: #FFFFFF;
-    font-size: 36px;
+    font-size: 38px;
 }
 
 .admin-revenue p {
@@ -337,7 +337,7 @@
     background-color: #FFFFFF;
     color: #173B4D;
 
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     cursor: pointer;
@@ -388,7 +388,7 @@
     cursor: pointer;
 
     font-family: inherit;
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 600;
 
     transition:
@@ -406,7 +406,7 @@
 }
 
 .action-grid button span {
-    font-size: 30px;
+    font-size: 32px;
 }
 
 
@@ -456,7 +456,7 @@
 
     color: #173B4D;
 
-    font-size: 13px;
+    font-size: 15px;
     font-weight: 600;
 }
 
@@ -504,7 +504,7 @@
     }
 
     .admin-welcome h1 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .admin-stats,
@@ -528,7 +528,7 @@
     }
 
     .admin-revenue h2 {
-        font-size: 30px;
+        font-size: 32px;
     }
 
     .section-header {

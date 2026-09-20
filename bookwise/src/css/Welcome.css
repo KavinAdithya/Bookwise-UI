@@ -20,13 +20,13 @@
 }
 
 .hero-label {
-    font-size: 14px;
+    font-size: 16px;
     font-weight: 700;
     letter-spacing: 2px;
 }
 
 .hero-content h1 {
-    font-size: 58px;
+    font-size: 60px;
     line-height: 1.1;
     margin: 20px 0;
 }
@@ -36,7 +36,7 @@
 }
 
 .hero-description {
-    font-size: 18px;
+    font-size: 20px;
     line-height: 1.6;
     max-width: 500px;
 }
@@ -66,7 +66,7 @@
 }
 
 .hero-image {
-    font-size: 180px;
+    font-size: 182px;
 }
 
 
@@ -78,7 +78,7 @@
 }
 
 .features-section h2 {
-    font-size: 36px;
+    font-size: 38px;
 }
 
 .section-description {
@@ -99,7 +99,7 @@
 }
 
 .feature-icon {
-    font-size: 35px;
+    font-size: 37px;
 }
 
 .feature-card h3 {
@@ -127,7 +127,7 @@
 }
 
 .author-section h2 {
-    font-size: 38px;
+    font-size: 40px;
 }
 
 .author-section p {
@@ -144,7 +144,7 @@
 }
 
 .welcome-cta h2 {
-    font-size: 40px;
+    font-size: 42px;
 }
 
 .welcome-cta p {
