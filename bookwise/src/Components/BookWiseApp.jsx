@@ -20,6 +20,7 @@ import UserDetail from './Admin/UserDetail';
 import AdminBooks from './Admin/AdminBooks';
 import AdminBookDetail from './Admin/AdminBookDetail';
 import UserBooks from './Users/UserBooks';
+import UserBookDetail from './Users/UserBookDetail';
 
 function BookWiseApp() {
     return <>
@@ -55,6 +56,14 @@ function BookWiseApp() {
                             <AuthorizationRoute
                                     allowedRoles={["USER"]}>
                                 <UserBooks/>
+                            </AuthorizationRoute>
+                            }/>
+                        <Route
+                            path='/books/:bookId'
+                            element={
+                            <AuthorizationRoute
+                                    allowedRoles={["USER"]}>
+                                <UserBookDetail/>
                             </AuthorizationRoute>
                             }/>
                         

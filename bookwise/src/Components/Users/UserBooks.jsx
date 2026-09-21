@@ -23,7 +23,7 @@ function UserBooks() {
 
 
     function handleViewDetails(bookId) {
-        // navigate(`/books/${bookId}`);
+        navigate(`/books/${bookId}`);
     }
 
 

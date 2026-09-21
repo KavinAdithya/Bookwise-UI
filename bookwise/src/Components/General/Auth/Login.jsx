@@ -38,7 +38,6 @@ function Login() {
 
             login(data);
 
-            debugger;
             const role = data.userDetail.role;
 
             if (role === "USER") {
