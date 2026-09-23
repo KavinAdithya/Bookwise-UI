@@ -19,37 +19,37 @@ apiClient.interceptors.request.use(config => {
     return config;
 });
 
-// apiClient.interceptors.response.use(
+apiClient.interceptors.response.use(
 
-//     response => response,
+    response => response,
 
-//     error => {
-//         if(error.code === "ERR_NETWORK") {
+    error => {
+        if(error.code === "ERR_NETWORK") {
 
-//             alert(
-//                 "Backend Server is unavailable"
-//             );
-//         } else if(error.code === "ECONNABORTED") {
+            alert(
+                "Backend Server is unavailable"
+            );
+        } else if(error.code === "ECONNABORTED") {
 
-//             alert(
-//                 "Server is taking too long to respond"
-//             );
+            alert(
+                "Server is taking too long to respond"
+            );
 
-//         } else if(error.response?.status === 401) {
+        } else if(error.response?.status === 401) {
 
-//             console.log(
-//                 "Unauthorized - Logging Out"
-//             );
+            console.log(
+                "Unauthorized - Logging Out"
+            );
 
-//             localStorage.clear();
+            localStorage.clear();
 
-//             window.location.href =
-//                 "/login";
-//         }
+            window.location.href =
+                "/login";
+        }
 
-//         return Promise.reject(error);
-//     }
-// );
+        return Promise.reject(error);
+    }
+);
 
 apiClient.interceptors.response.use(
     (response) => {

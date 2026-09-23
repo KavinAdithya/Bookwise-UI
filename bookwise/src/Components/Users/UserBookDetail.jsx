@@ -38,7 +38,7 @@ function UserBookDetail() {
     function handleBorrow() {
         console.log("Borrow book:", book.id);
 
-        // Borrow API will be called here
+        navigate(`/borrow-books/confirm/${book.id}`)
     }
 
 
