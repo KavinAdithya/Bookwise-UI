@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import {fetchBorrowBookConfirmationDetails} from '../../apiservice/borrowbook/borrowbook'
 import "../../css/User/BorrowBook.css"
 import { formatDateTime } from "../../Utils/Formats";
+import {registerBorrowBook} from '../../apiservice/borrowbook/borrowbook'
 
 function BorrowBook() {
 
@@ -71,11 +72,20 @@ function BorrowBook() {
         );
     }
 
-    function handleConfirmBorrow() {
-        console.log({
-            bookId: book.id,
-            quantity
-        });
+    async function handleConfirmBorrow() {
+
+        const data = {
+            "bookId" : bookId,
+            "quantity" : quantity
+        }
+
+        try {
+            const response = await registerBorrowBook(data)
+            alert(response.data.message)
+            navigate("/books")
+        } catch(error) {
+            console.log("Failed to borrow book " + error)
+        }
     }
 
     const canBorrow = borrowBook.subscription.availableBorrowBookCount > 0;
@@ -88,7 +98,7 @@ function BorrowBook() {
 
             <button
                 className="borrow-back-btn"
-                onClick={() => navigate(`/books/${borrowBook.bookId}`)}
+                onClick={() => navigate(`/books`)}
             >
                 ← Back to Book
             </button>

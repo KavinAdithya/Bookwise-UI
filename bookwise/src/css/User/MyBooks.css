@@ -1,0 +1,348 @@
+.my-books-page {
+    width: 100%;
+    padding: 40px 48px 60px;
+    box-sizing: border-box;
+    color: #1F2933;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.my-books-header {
+    margin-bottom: 28px;
+}
+
+.my-books-label {
+    display: block;
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.my-books-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+    font-size: 32px;
+    font-weight: 700;
+}
+
+.my-books-header p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 17px;
+}
+
+
+/* =========================
+   TABS
+========================= */
+
+.my-books-tabs {
+    display: flex;
+    gap: 4px;
+
+    margin-bottom: 32px;
+
+    border-bottom: 1px solid #E5E1D8;
+}
+
+.my-books-tab {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    gap: 9px;
+
+    padding: 13px 20px;
+
+    border: none;
+    background: transparent;
+
+    color: #6B7280;
+
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.my-books-tab:hover {
+    color: #173B4D;
+}
+
+.my-books-tab.active {
+    color: #173B4D;
+    font-weight: 600;
+}
+
+.my-books-tab.active::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: -1px;
+
+    height: 2px;
+
+    background: #D69E4A;
+}
+
+.tab-count {
+    min-width: 22px;
+    height: 22px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 6px;
+
+    border-radius: 12px;
+
+    background: #F3F6F7;
+    color: #173B4D;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.my-books-section {
+    width: 100%;
+}
+
+.section-heading {
+    margin-bottom: 18px;
+}
+
+.section-heading h2 {
+    margin: 0 0 5px;
+
+    color: #173B4D;
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.section-heading p {
+    margin: 0;
+
+    color: #6B7280;
+    font-size: 15px;
+}
+
+
+/* =========================
+   COVER
+========================= */
+
+.my-books-cover-cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.my-books-cover {
+    width: 42px;
+    height: 58px;
+
+    object-fit: cover;
+
+    border-radius: 4px;
+
+    background: #F3F6F7;
+
+    box-shadow: 0 2px 6px rgba(23, 59, 77, 0.10);
+}
+
+
+/* =========================
+   BOOK TITLE
+========================= */
+
+.my-books-title-cell {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+
+    min-width: 0;
+}
+
+.my-books-title {
+    color: #173B4D;
+    font-size: 16px;
+    font-weight: 600;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.my-books-author {
+    color: #6B7280;
+    font-size: 14px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+
+/* =========================
+   BORROW STATUS
+========================= */
+
+.borrow-status-cell {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.my-borrow-status {
+    display: inline-flex;
+
+    padding: 5px 9px;
+
+    border-radius: 5px;
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.my-borrow-status.borrowed {
+    background: #E5F3EC;
+    color: #28734A;
+}
+
+.my-borrow-status.overdue {
+    background: #FBE9E7;
+    color: #B42318;
+}
+
+.my-borrow-status.returned {
+    background: #F3F6F7;
+    color: #6B7280;
+}
+
+.days-remaining {
+    color: #6B7280;
+    font-size: 13px;
+}
+
+.overdue-fine {
+    color: #B42318;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+
+/* =========================
+   ACTIONS
+========================= */
+
+.my-books-actions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+
+    flex-wrap: wrap;
+}
+
+.my-view-btn,
+.my-return-btn,
+.my-fine-btn {
+    height: 32px;
+
+    padding: 0 11px;
+
+    border-radius: 6px;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.my-view-btn {
+    border: 1px solid #D9D5CC;
+    background: #FFFFFF;
+    color: #173B4D;
+}
+
+.my-view-btn:hover {
+    border-color: #173B4D;
+    background: #F3F6F7;
+}
+
+.my-return-btn {
+    border: 1px solid #173B4D;
+    background: #173B4D;
+    color: #FFFFFF;
+}
+
+.my-return-btn:hover {
+    background: #0F2D3B;
+}
+
+.my-fine-btn {
+    border: 1px solid #D69E4A;
+    background: #D69E4A;
+    color: #FFFFFF;
+}
+
+.my-fine-btn:hover {
+    background: #BD8536;
+}
+
+
+/* =========================
+   EMPTY
+========================= */
+
+.my-books-empty {
+    min-height: 180px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 8px;
+
+    color: #6B7280;
+    font-size: 16px;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.my-books-loading {
+    min-height: 400px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #6B7280;
+    font-size: 16px;
+}

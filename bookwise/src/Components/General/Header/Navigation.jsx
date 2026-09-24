@@ -6,6 +6,7 @@ const navigation = {
     USER: [
         { label: "Home", path: "/home"},
         { label: "Books", path: "/books" },
+        { label: "My Books", path: "/borrow-books" },
         { label: "History", path: "/history" },
         { label: "Subscription", path: "/subscription" }
     ],
