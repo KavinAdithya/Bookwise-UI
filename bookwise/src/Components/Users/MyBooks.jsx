@@ -102,7 +102,7 @@ function MyBooks() {
     function handleReturn(book) {
         console.log("Return:", book);
 
-        // return API
+        navigate(`/borrow-books/${book.borrowBookId}/return/details`)
     }
 
     function handlePayFine(book) {

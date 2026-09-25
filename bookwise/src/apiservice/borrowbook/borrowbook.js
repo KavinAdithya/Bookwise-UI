@@ -11,3 +11,7 @@ export function registerBorrowBook(body) {
 export function fetchMyBorrowedBooks() {
     return apiClient.get("/borrow-books")
 }
+
+export function fetchReturnBookDetails(borrowBookId) {
+    return apiClient.get(`/borrow-books/${borrowBookId}/return/details`)
+}

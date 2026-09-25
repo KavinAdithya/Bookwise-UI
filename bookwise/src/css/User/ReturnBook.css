@@ -1,0 +1,630 @@
+.return-book-page {
+    width: 100%;
+    padding: 40px 48px 60px;
+    box-sizing: border-box;
+
+    color: #1F2933;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.return-back-btn {
+    margin-bottom: 28px;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #173B4D;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.return-back-btn:hover {
+    color: #0F2D3B;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.return-book-header {
+    margin-bottom: 32px;
+}
+
+.return-book-header span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.return-book-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.return-book-header p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.return-book-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(320px, 0.8fr);
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   LEFT CARD
+========================= */
+
+.return-book-card {
+    padding: 32px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+.return-book-main {
+    display: grid;
+
+    grid-template-columns: 190px 1fr;
+
+    gap: 30px;
+}
+
+.return-cover-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.return-book-cover {
+    width: 170px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    background: #F3F6F7;
+
+    box-shadow:
+        0 5px 15px rgba(23, 59, 77, 0.12);
+}
+
+.return-book-info {
+    padding-top: 4px;
+}
+
+.return-book-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.return-book-info h2 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.return-book-author {
+    margin: 0 0 22px;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+.return-book-description {
+    margin: 0;
+
+    color: #5F6870;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.return-divider {
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: #E5E1D8;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.return-section h3 {
+    margin: 0 0 20px;
+
+    color: #173B4D;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   INFORMATION GRID
+========================= */
+
+.return-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+.return-info-item {
+    display: flex;
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 14px;
+
+    background: #FBFAF7;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 7px;
+}
+
+.return-info-item span {
+    color: #8A9198;
+
+    font-size: 12px;
+}
+
+.return-info-item strong {
+    color: #1F2933;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.overdue-value {
+    color: #B42318 !important;
+}
+
+.normal-value {
+    color: #28734A !important;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.return-summary-card {
+    position: sticky;
+
+    top: 24px;
+
+    padding: 28px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.05);
+}
+
+.return-summary-card h2 {
+    margin: 0 0 24px;
+
+    color: #173B4D;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   SUMMARY BOOK
+========================= */
+
+.return-summary-book {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.return-summary-cover {
+    width: 55px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #F3F6F7;
+}
+
+.return-summary-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.return-summary-book h3 {
+    margin: 0 0 5px;
+
+    color: #173B4D;
+
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.return-summary-book p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SUMMARY ROWS
+========================= */
+
+.return-summary-divider {
+    height: 1px;
+
+    margin: 22px 0;
+
+    background: #E5E1D8;
+}
+
+.return-summary-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+.return-summary-row span {
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+.return-summary-row strong {
+    color: #1F2933;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.summary-overdue {
+    color: #B42318 !important;
+}
+
+
+/* =========================
+   DUE AMOUNT
+========================= */
+
+.return-due-amount {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.return-due-amount span {
+    color: #173B4D;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.return-due-amount strong {
+    color: #173B4D;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   OVERDUE NOTICE
+========================= */
+
+.return-overdue-notice {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 24px;
+    padding: 13px;
+
+    border: 1px solid #F0C5C0;
+    border-radius: 7px;
+
+    background: #FBE9E7;
+}
+
+.return-overdue-notice > span {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #B42318;
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.return-overdue-notice p {
+    margin: 0;
+
+    color: #8F2D25;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   SUCCESS NOTICE
+========================= */
+
+.return-success-notice {
+    display: flex;
+
+    gap: 10px;
+
+    margin-top: 24px;
+    padding: 13px;
+
+    border: 1px solid #C9E5D4;
+    border-radius: 7px;
+
+    background: #E5F3EC;
+}
+
+.return-success-notice > span {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    width: 20px;
+    height: 20px;
+
+    flex-shrink: 0;
+
+    border-radius: 50%;
+
+    background: #28734A;
+    color: #FFFFFF;
+
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.return-success-notice p {
+    margin: 0;
+
+    color: #28734A;
+
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.confirm-return-btn {
+    width: 100%;
+    height: 46px;
+
+    margin-top: 22px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #173B4D;
+    color: #FFFFFF;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.confirm-return-btn:hover {
+    background: #0F2D3B;
+
+    transform: translateY(-1px);
+}
+
+.cancel-return-btn {
+    width: 100%;
+    height: 42px;
+
+    margin-top: 9px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 7px;
+
+    background: #FFFFFF;
+    color: #173B4D;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.cancel-return-btn:hover {
+    background: #F3F6F7;
+    border-color: #B8B3A9;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.return-book-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .return-book-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .return-summary-card {
+        position: static;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .return-book-page {
+        padding: 30px 20px 40px;
+    }
+
+    .return-book-card {
+        padding: 22px;
+    }
+
+    .return-book-main {
+        grid-template-columns: 1fr;
+    }
+
+    .return-cover-container {
+        justify-content: flex-start;
+    }
+
+    .return-book-cover {
+        width: 140px;
+        height: 200px;
+    }
+
+    .return-book-info h2 {
+        font-size: 22px;
+    }
+
+    .return-info-grid {
+        grid-template-columns: 1fr;
+    }
+}
