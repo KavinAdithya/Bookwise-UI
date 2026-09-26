@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 import DataTable from "../General/DataTable/DataTable";
+import { formatDate } from "../../Utils/Formats.js";
 
 import {fetchMyBorrowedBooks} from "../../apiservice/borrowbook/borrowbook.js";
 import '../../css/User/MyBooks.css'
@@ -51,22 +52,6 @@ function MyBooks() {
         }
     }
 
-    function formatDate(dateTime) {
-
-        if (!dateTime) {
-            return "-";
-        }
-
-        return new Date(dateTime).toLocaleDateString(
-            "en-IN",
-            {
-                day: "2-digit",
-                month: "short",
-                year: "numeric"
-            }
-        );
-    }
-
     function getBorrowStatus(book) {
 
         if (book.returnedAt) {
@@ -96,7 +81,7 @@ function MyBooks() {
     }
 
     function handleViewBook(book) {
-        navigate(`/books/${book.bookId}`);
+        navigate(`/borrow-books/${book.borrowBookId}`);
     }
 
     function handleReturn(book) {
@@ -105,19 +90,11 @@ function MyBooks() {
         navigate(`/borrow-books/${book.borrowBookId}/return/details`)
     }
 
-    function handlePayFine(book) {
-        console.log("Pay fine:", book);
-
-        // payment API
-    }
-
-
     /*
      * ============================
      * BORROWED BOOK COLUMNS
      * ============================
      */
-
     const borrowedBookColumns = [
 
         {

@@ -1,4 +1,4 @@
-import apiClient from '../../api/ApiClient'
+import apiClient from "../../api/apiClient"
 
 export function fetchBorrowBookConfirmationDetails(bookId, quantity) {
     return apiClient.get(`/borrow-books/confirmation/${bookId}/${quantity}`)
@@ -15,3 +15,11 @@ export function fetchMyBorrowedBooks() {
 export function fetchReturnBookDetails(borrowBookId) {
     return apiClient.get(`/borrow-books/${borrowBookId}/return/details`)
 }
+
+export function returnBorrowBook(data) {
+    return apiClient.patch(`/borrow-books/return-book`, data)
+}
+
+export function getBorrowDetails(borrowBookId) {
+    return apiClient.get(`/borrow-books/${borrowBookId}`)
+} 

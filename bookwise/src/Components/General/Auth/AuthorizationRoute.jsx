@@ -6,7 +6,7 @@ function AuthorizationRoute({allowedRoles, children}) {
     const {user, isAuthenticated, loading} = useContext(AuthContext);
 
     console.log("Authorization Part")
-    debugger;
+    
     if (loading)
         return <div>Loading...</div>
 

@@ -2,11 +2,13 @@ import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
 import {
-    fetchReturnBookDetails
+    fetchReturnBookDetails,
+    returnBorrowBook
 } from "../../apiservice/borrowbook/borrowbook";
 import '../../css/User/ReturnBook.css'
 
 import { formatDate, formatDateTime } from "../../Utils/Formats";
+
 
 function ReturnBook() {
 
@@ -74,14 +76,22 @@ function ReturnBook() {
         overdueDays > 0;
 
 
-    function handleConfirmReturn() {
+    async function handleConfirmReturn() {
 
-        console.log({
-            borrowId: borrow.id,
-            overdueDays,
-            dueAmount
-        });
+        const data = {
+            "borrowBookId" : borrowBook.id,
+            "amount" : borrowBook.dueAmountDetails.totalDueAmount
+        }
 
+        console.log(data)
+
+        try {
+            const response = await returnBorrowBook(data)
+            alert(response.data.message)
+            navigate("/borrow-books")
+        } catch (error) {
+            console.log("Failed to return book " + error)
+        }
 
     }
 
@@ -130,8 +140,8 @@ function ReturnBook() {
                         <div className="return-cover-container">
 
                             <img
-                                src={`http://localhost:8080/${borrowBook.coverImageUrl}`}
-                                alt={borrowBook.title}
+                                src={`http://localhost:8080/${borrowBook.book.coverImageUrl}`}
+                                alt={borrowBook.book.title}
                                 className="return-book-cover"
                             />
 
@@ -143,19 +153,19 @@ function ReturnBook() {
                         <div className="return-book-info">
 
                             <span className="return-book-category">
-                                {borrowBook.categoryName}
+                                {borrowBook.book.categoryName}
                             </span>
 
                             <h2>
-                                {borrowBook.title}
+                                {borrowBook.book.title}
                             </h2>
 
                             <p className="return-book-author">
-                                by {borrowBook.authorName}
+                                by {borrowBook.book.authorName}
                             </p>
 
                             <p className="return-book-description">
-                                {borrowBook.description}
+                                {borrowBook.book.description}
                             </p>
 
                         </div>
@@ -181,7 +191,7 @@ function ReturnBook() {
                                 </span>
 
                                 <strong>
-                                    {formatDate(
+                                    {formatDateTime(
                                         borrowBook.borrowedDate
                                     )}
                                 </strong>
@@ -196,7 +206,7 @@ function ReturnBook() {
                                 </span>
 
                                 <strong>
-                                    {formatDate(
+                                    {formatDateTime(
                                         borrowBook.dueDate
                                     )}
                                 </strong>
@@ -299,8 +309,8 @@ function ReturnBook() {
                         <div className="return-summary-cover">
 
                             <img
-                                src={`http://localhost:8080/${borrowBook.coverImageUrl}`}
-                                alt={borrowBook.title}
+                                src={`http://localhost:8080/${borrowBook.book.coverImageUrl}`}
+                                alt={borrowBook.book.title}
                             />
 
                         </div>
@@ -308,11 +318,11 @@ function ReturnBook() {
                         <div>
 
                             <h3>
-                                {borrowBook.title}
+                                {borrowBook.book.title}
                             </h3>
 
                             <p>
-                                {borrowBook.authorName}
+                                {borrowBook.book.authorName}
                             </p>
 
                         </div>
