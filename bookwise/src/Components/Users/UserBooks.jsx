@@ -38,7 +38,7 @@ function UserBooks() {
     function handleBuy(bookId) {
         console.log("Buy book:", bookId);
 
-        // Buy API will come here
+        navigate(`/purchase-books/${bookId}`)
     }
 
 

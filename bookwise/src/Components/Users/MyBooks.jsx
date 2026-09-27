@@ -5,6 +5,8 @@ import DataTable from "../General/DataTable/DataTable";
 import { formatDate } from "../../Utils/Formats.js";
 
 import {fetchMyBorrowedBooks} from "../../apiservice/borrowbook/borrowbook.js";
+import {findAllPurchasedBooks} from '../../apiservice/purchasebook/PurchaseBook.js'
+
 import '../../css/User/MyBooks.css'
 
 
@@ -28,18 +30,19 @@ function MyBooks() {
         try {
 
             const [
-                borrowedResponse
+                borrowedResponse, purchasedResponse
             ] = await Promise.all([
-                fetchMyBorrowedBooks()
+                fetchMyBorrowedBooks(),
+                findAllPurchasedBooks()
             ]);
 
             setBorrowedBooks(
                 borrowedResponse.data.data
             );
 
-            // setPurchasedBooks(
-            //     purchasedResponse.data.data
-            // );
+            setPurchasedBooks(
+                purchasedResponse.data.data
+            );
 
         } catch (error) {
 
@@ -253,84 +256,84 @@ function MyBooks() {
      * ============================
      */
 
-    // const purchasedBookColumns = [
+    const purchasedBookColumns = [
 
-    //     {
-    //         key: "coverImageUrl",
-    //         label: "Cover",
-    //         render: (book) => (
-    //             <div className="my-books-cover-cell">
+        {
+            key: "coverImageUrl",
+            label: "Cover",
+            render: (book) => (
+                <div className="my-books-cover-cell">
 
-    //                 <img
-    //                     src={`http://localhost:8080/${book.coverImageUrl}`}
-    //                     alt={book.title}
-    //                     className="my-books-cover"
-    //                 />
+                    <img
+                        src={`http://localhost:8080/${book.coverImageUrl}`}
+                        alt={book.title}
+                        className="my-books-cover"
+                    />
 
-    //             </div>
-    //         )
-    //     },
+                </div>
+            )
+        },
 
-    //     {
-    //         key: "title",
-    //         label: "Book",
-    //         render: (book) => (
-    //             <div className="my-books-title-cell">
+        {
+            key: "title",
+            label: "Book",
+            render: (book) => (
+                <div className="my-books-title-cell">
 
-    //                 <span className="my-books-title">
-    //                     {book.title}
-    //                 </span>
+                    <span className="my-books-title">
+                        {book.title}
+                    </span>
 
-    //                 <span className="my-books-author">
-    //                     {book.authorName}
-    //                 </span>
+                    <span className="my-books-author">
+                        {book.authorName}
+                    </span>
 
-    //             </div>
-    //         )
-    //     },
+                </div>
+            )
+        },
 
-    //     {
-    //         key: "categoryName",
-    //         label: "Category"
-    //     },
+        {
+            key: "categoryName",
+            label: "Category"
+        },
 
-    //     {
-    //         key: "purchasePrice",
-    //         label: "Price",
-    //         render: (book) => (
-    //             <span>
-    //                 ₹{book.purchasePrice}
-    //             </span>
-    //         )
-    //     },
+        {
+            key: "purchasePrice",
+            label: "Price",
+            render: (book) => (
+                <span>
+                    ₹{book.purchasedPrice}
+                </span>
+            )
+        },
 
-    //     {
-    //         key: "purchasedAt",
-    //         label: "Purchased On",
-    //         render: (book) => (
-    //             <span>
-    //                 {formatDate(book.purchasedAt)}
-    //             </span>
-    //         )
-    //     },
+        {
+            key: "purchasedAt",
+            label: "Purchased On",
+            render: (book) => (
+                <span>
+                    {formatDate(book.purchasedAt)}
+                </span>
+            )
+        },
 
-    //     {
-    //         key: "action",
-    //         label: "Action",
-    //         render: (book) => (
-    //             <button
-    //                 className="my-view-btn"
-    //                 onClick={(event) => {
-    //                     event.stopPropagation();
-    //                     handleViewBook(book);
-    //                 }}
-    //             >
-    //                 View
-    //             </button>
-    //         )
-    //     }
+        {
+            key: "action",
+            label: "Action",
+            render: (book) => (
+                <button
+                    className="my-view-btn"
+                    onClick={(event) => {
+                        event.stopPropagation();
+                        handleViewBook(book);
+                    }}
+                >
+                    View
+                </button>
+            )
+        }
 
-    // ];
+    ];
 
 
     if (loading) {
@@ -441,7 +444,7 @@ function MyBooks() {
 
             {/* PURCHASED */}
 
-            {/* {activeTab === "PURCHASED" && (
+            {activeTab === "PURCHASED" && (
 
                 <section className="my-books-section">
 
@@ -475,7 +478,7 @@ function MyBooks() {
 
                 </section>
 
-            )} */}
+            )}
 
         </div>
     );

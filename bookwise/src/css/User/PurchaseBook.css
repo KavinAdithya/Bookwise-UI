@@ -1,0 +1,653 @@
+.purchase-book-page {
+    width: 100%;
+    padding: 40px 48px 60px;
+
+    box-sizing: border-box;
+
+    color: #1F2933;
+}
+
+
+/* =========================
+   BACK
+========================= */
+
+.purchase-back-btn {
+    margin-bottom: 28px;
+    padding: 0;
+
+    border: none;
+    background: transparent;
+
+    color: #173B4D;
+
+    font-family: inherit;
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.purchase-back-btn:hover {
+    color: #0F2D3B;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.purchase-book-header {
+    margin-bottom: 32px;
+}
+
+.purchase-book-header > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.purchase-book-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+
+    font-size: 30px;
+    font-weight: 700;
+}
+
+.purchase-book-header p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================
+   LAYOUT
+========================= */
+
+.purchase-book-layout {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1.7fr)
+        minmax(320px, 0.8fr);
+
+    gap: 28px;
+
+    align-items: start;
+}
+
+
+/* =========================
+   LEFT CARD
+========================= */
+
+.purchase-book-card {
+    padding: 32px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+
+/* =========================
+   BOOK
+========================= */
+
+.purchase-book-main {
+    display: grid;
+
+    grid-template-columns: 190px 1fr;
+
+    gap: 30px;
+}
+
+.purchase-cover-container {
+    display: flex;
+
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.purchase-book-cover {
+    width: 170px;
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    background: #F3F6F7;
+
+    box-shadow:
+        0 5px 15px rgba(23, 59, 77, 0.12);
+}
+
+.purchase-book-info {
+    padding-top: 4px;
+}
+
+.purchase-book-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+    font-weight: 700;
+
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+}
+
+.purchase-book-info h2 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 26px;
+    line-height: 1.3;
+}
+
+.purchase-book-author {
+    margin: 0 0 22px;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+.purchase-book-description {
+    margin: 0;
+
+    color: #5F6870;
+
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* =========================
+   DIVIDER
+========================= */
+
+.purchase-divider {
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: #E5E1D8;
+}
+
+
+/* =========================
+   SECTION
+========================= */
+
+.purchase-section h3 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.purchase-section p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   QUANTITY
+========================= */
+
+.quantity-header {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.quantity-control {
+    display: inline-flex;
+
+    align-items: center;
+
+    margin-top: 20px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 7px;
+
+    overflow: hidden;
+
+    background: #FFFFFF;
+}
+
+.quantity-control button {
+    width: 44px;
+    height: 42px;
+
+    border: none;
+
+    background: #F3F6F7;
+
+    color: #173B4D;
+
+    font-family: inherit;
+
+    font-size: 21px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.quantity-control button:hover:not(:disabled) {
+    background: #E8EEF1;
+}
+
+.quantity-control button:disabled {
+    color: #B8B3A9;
+
+    cursor: not-allowed;
+}
+
+.quantity-control input {
+    width: 65px;
+    height: 42px;
+
+    padding: 0;
+
+    border: none;
+
+    border-left: 1px solid #D9D5CC;
+    border-right: 1px solid #D9D5CC;
+
+    outline: none;
+
+    background: #FFFFFF;
+
+    color: #173B4D;
+
+    font-family: inherit;
+
+    font-size: 15px;
+    font-weight: 600;
+
+    text-align: center;
+
+    box-sizing: border-box;
+}
+
+.quantity-control input:disabled {
+    background: #F7F5F0;
+
+    color: #6B7280;
+}
+
+.quantity-control input::-webkit-outer-spin-button,
+.quantity-control input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+
+    margin: 0;
+}
+
+.quantity-control input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+.quantity-updating {
+    margin-top: 10px !important;
+
+    color: #6B7280 !important;
+
+    font-size: 12px !important;
+}
+
+
+/* =========================
+   INFO GRID
+========================= */
+
+.purchase-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+.purchase-info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 14px;
+
+    background: #FBFAF7;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 7px;
+}
+
+.purchase-info-item span {
+    color: #8A9198;
+
+    font-size: 12px;
+}
+
+.purchase-info-item strong {
+    color: #1F2933;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   SUMMARY
+========================= */
+
+.purchase-summary-card {
+    position: sticky;
+
+    top: 24px;
+
+    padding: 28px;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+    border-radius: 10px;
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.05);
+}
+
+.purchase-summary-card h2 {
+    margin: 0 0 24px;
+
+    color: #173B4D;
+
+    font-size: 20px;
+}
+
+
+/* =========================
+   SUMMARY BOOK
+========================= */
+
+.purchase-summary-book {
+    display: flex;
+
+    align-items: center;
+
+    gap: 14px;
+}
+
+.purchase-summary-cover {
+    width: 55px;
+    height: 76px;
+
+    flex-shrink: 0;
+
+    overflow: hidden;
+
+    border-radius: 4px;
+
+    background: #F3F6F7;
+}
+
+.purchase-summary-cover img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.purchase-summary-book h3 {
+    margin: 0 0 5px;
+
+    color: #173B4D;
+
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+.purchase-summary-book p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   SUMMARY ROW
+========================= */
+
+.purchase-summary-divider {
+    height: 1px;
+
+    margin: 22px 0;
+
+    background: #E5E1D8;
+}
+
+.purchase-summary-row {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 14px;
+}
+
+.purchase-summary-row span {
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+.purchase-summary-row strong {
+    color: #1F2933;
+
+    font-size: 14px;
+    font-weight: 600;
+}
+
+
+/* =========================
+   TOTAL
+========================= */
+
+.purchase-total {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.purchase-total span {
+    color: #173B4D;
+
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.purchase-total strong {
+    color: #173B4D;
+
+    font-size: 22px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.confirm-purchase-btn {
+    width: 100%;
+    height: 46px;
+
+    margin-top: 24px;
+
+    border: none;
+    border-radius: 7px;
+
+    background: #D69E4A;
+    color: #FFFFFF;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.confirm-purchase-btn:hover:not(:disabled) {
+    background: #BD8536;
+
+    transform: translateY(-1px);
+}
+
+.confirm-purchase-btn:disabled {
+    background: #B8B3A9;
+
+    cursor: not-allowed;
+}
+
+.cancel-purchase-btn {
+    width: 100%;
+    height: 42px;
+
+    margin-top: 9px;
+
+    border: 1px solid #D9D5CC;
+    border-radius: 7px;
+
+    background: #FFFFFF;
+    color: #173B4D;
+
+    font-family: inherit;
+
+    font-size: 13px;
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.cancel-purchase-btn:hover:not(:disabled) {
+    background: #F3F6F7;
+
+    border-color: #B8B3A9;
+}
+
+.cancel-purchase-btn:disabled {
+    color: #A0A0A0;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================
+   LOADING
+========================= */
+
+.purchase-book-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 900px) {
+
+    .purchase-book-layout {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-summary-card {
+        position: static;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .purchase-book-page {
+        padding: 30px 20px 40px;
+    }
+
+    .purchase-book-card {
+        padding: 22px;
+    }
+
+    .purchase-book-main {
+        grid-template-columns: 1fr;
+    }
+
+    .purchase-cover-container {
+        justify-content: flex-start;
+    }
+
+    .purchase-book-cover {
+        width: 140px;
+        height: 200px;
+    }
+
+    .purchase-book-info h2 {
+        font-size: 22px;
+    }
+
+    .purchase-info-grid {
+        grid-template-columns: 1fr;
+    }
+}

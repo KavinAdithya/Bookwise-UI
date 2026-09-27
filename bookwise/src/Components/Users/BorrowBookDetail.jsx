@@ -19,7 +19,6 @@ function BorrowBookDetail() {
     }, [borrowBookId]);
 
     async function fetchBorrowDetails() {
-
         try {
 
             const response = await getBorrowDetails(borrowBookId);
