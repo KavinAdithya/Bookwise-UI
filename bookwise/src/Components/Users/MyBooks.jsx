@@ -93,6 +93,10 @@ function MyBooks() {
         navigate(`/borrow-books/${book.borrowBookId}/return/details`)
     }
 
+    function handlePurchaseView(purchaseBook) {
+        navigate(`/purchase-books/view/${purchaseBook.id}`)
+    }
+
     /*
      * ============================
      * BORROWED BOOK COLUMNS
@@ -325,7 +329,7 @@ function MyBooks() {
                     className="my-view-btn"
                     onClick={(event) => {
                         event.stopPropagation();
-                        handleViewBook(book);
+                        handlePurchaseView(book);
                     }}
                 >
                     View

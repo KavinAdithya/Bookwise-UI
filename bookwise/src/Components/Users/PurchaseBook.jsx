@@ -6,7 +6,7 @@ import {
     registerPurchaseBook
 } from "../../apiservice/purchasebook/PurchaseBook";
 
-import '../../css/User/PurchaseBook.css'
+import "../../css/User/PurchaseBook.css";
 
 function PurchaseBook() {
 
@@ -14,55 +14,100 @@ function PurchaseBook() {
     const navigate = useNavigate();
 
     const [purchaseDetails, setPurchaseDetails] = useState(null);
-    const [quantity, setQuantity] = useState(1);
+
+
+    const [quantity, setQuantity] = useState("1");
+
     const [loading, setLoading] = useState(true);
     const [quantityLoading, setQuantityLoading] = useState(false);
 
+
+
     useEffect(() => {
-        fetchPurchaseDetails(1);
+        fetchPurchaseDetails(1, true);
     }, [bookId]);
 
 
-    async function fetchPurchaseDetails(quantity) {
+    async function fetchPurchaseDetails(
+        requestedQuantity,
+        initialLoad = false
+    ) {
+
         try {
 
-            setLoading(true);
+            if (initialLoad) {
+                setLoading(true);
+            }
 
             const response =
-                await computePurchaseBookDetails(bookId, quantity);
+                await computePurchaseBookDetails(
+                    bookId,
+                    requestedQuantity
+                );
 
-            setPurchaseDetails(
-                response.data.data
+            const data = response.data.data;
+
+            setPurchaseDetails(data);
+
+            setQuantity(
+                String(data.price.quantity)
             );
 
         } catch (error) {
 
             console.log(
-                "Failed to fetch purchase details"
+                "Failed to fetch purchase details",
+                error
             );
 
         } finally {
 
-            setLoading(false);
+            if (initialLoad) {
+                setLoading(false);
+            }
         }
     }
 
 
+
     async function updateQuantity(newQuantity) {
 
-        if (newQuantity < 1) {
+        if (!newQuantity || newQuantity < 1) {
             return;
         }
 
         try {
+
             setQuantityLoading(true);
-            fetchPurchaseDetails(newQuantity)
-            setQuantity(newQuantity)
+
+            const response =
+                await computePurchaseBookDetails(
+                    bookId,
+                    newQuantity
+                );
+
+            const data = response.data.data;
+
+            setPurchaseDetails(data);
+
+            setQuantity(
+                String(data.price.quantity)
+            );
+
         } catch (error) {
 
             console.log(
-                "Failed to update quantity"
+                "Failed to update quantity",
+                error
             );
+
+            if (purchaseDetails) {
+                setQuantity(
+                    String(
+                        purchaseDetails.price.quantity
+                    )
+                );
+            }
 
         } finally {
 
@@ -74,9 +119,12 @@ function PurchaseBook() {
     function decreaseQuantity() {
 
         const currentQuantity =
-            purchaseDetails.price.quantity;
+            Number(quantity);
 
-        if (currentQuantity <= 1) {
+        if (
+            currentQuantity <= 1 ||
+            quantityLoading
+        ) {
             return;
         }
 
@@ -85,30 +133,61 @@ function PurchaseBook() {
         );
     }
 
-
     function increaseQuantity() {
 
         const currentQuantity =
-            purchaseDetails.price.quantity;
+            Number(quantity);
+
+        if (quantityLoading) {
+            return;
+        }
 
         updateQuantity(
             currentQuantity + 1
         );
     }
 
-
     function handleQuantityChange(event) {
 
         const value =
-            Number(event.target.value);
+            event.target.value;
 
-        if (!value || value < 1) {
+        setQuantity(value);
+    }
+
+
+
+    async function handleQuantityBlur() {
+
+        const newQuantity =
+            Number(quantity);
+
+        if (
+            !quantity ||
+            !newQuantity ||
+            newQuantity < 1
+        ) {
+
+            setQuantity(
+                String(
+                    purchaseDetails.price.quantity
+                )
+            );
+
             return;
         }
 
-        updateQuantity(value);
-    }
+        if (
+            newQuantity ===
+            purchaseDetails.price.quantity
+        ) {
+            return;
+        }
 
+        await updateQuantity(
+            newQuantity
+        );
+    }
 
     function formatAmount(amount) {
 
@@ -124,28 +203,31 @@ function PurchaseBook() {
 
     async function handleConfirmPurchase() {
 
-        console.log(
-            "Confirm purchase:",
-            purchaseDetails
-        );
-
         const data = {
-            "bookId" : bookId,
-            "quantity" : quantity,
-            "purchaseAmount" : purchaseDetails.price.amount
-        }
+            bookId: bookId,
+            quantity: purchaseDetails.price.quantity,
+            purchaseAmount: purchaseDetails.price.amount
+        };
 
         try {
-            const response = await registerPurchaseBook(data)
-            alert(response.data.message)
-            navigate('/borrow-books')
-        } catch(error) {
-            console.log("Failed to purchase book " + error)
+
+            const response =
+                await registerPurchaseBook(data);
+
+            alert(response.data.message);
+
+            navigate("/my-books");
+
+        } catch (error) {
+
+            console.log(
+                "Failed to purchase book",
+                error
+            );
         }
-    } 
+    }
 
-
-    if (loading || quantityLoading) {
+    if (loading) {
 
         return (
             <div className="purchase-book-loading">
@@ -173,11 +255,8 @@ function PurchaseBook() {
 
 
     return (
-        <div className="purchase-book-page">
 
-            {/* =========================
-                BACK
-            ========================= */}
+        <div className="purchase-book-page">
 
             <button
                 className="purchase-back-btn"
@@ -189,9 +268,9 @@ function PurchaseBook() {
             </button>
 
 
-            {/* =========================
+            {/* =================================================
                 HEADER
-            ========================= */}
+            ================================================= */}
 
             <div className="purchase-book-header">
 
@@ -211,17 +290,22 @@ function PurchaseBook() {
             </div>
 
 
-            {/* =========================
-                MAIN
-            ========================= */}
+            {/* =================================================
+                MAIN LAYOUT
+            ================================================= */}
 
             <div className="purchase-book-layout">
 
-                {/* =========================
+
+                {/* =================================================
                     LEFT CARD
-                ========================= */}
+                ================================================= */}
 
                 <div className="purchase-book-card">
+
+                    {/* =================================================
+                        BOOK
+                    ================================================= */}
 
                     <div className="purchase-book-main">
 
@@ -238,7 +322,7 @@ function PurchaseBook() {
                         </div>
 
 
-                        {/* BOOK INFO */}
+                        {/* BOOK INFORMATION */}
 
                         <div className="purchase-book-info">
 
@@ -266,9 +350,9 @@ function PurchaseBook() {
                     <div className="purchase-divider" />
 
 
-                    {/* =========================
+                    {/* =================================================
                         QUANTITY
-                    ========================= */}
+                    ================================================= */}
 
                     <div className="purchase-section">
 
@@ -292,28 +376,37 @@ function PurchaseBook() {
 
                         <div className="quantity-control">
 
+                            {/* DECREASE */}
+
                             <button
                                 type="button"
                                 onClick={decreaseQuantity}
                                 disabled={
                                     quantityLoading ||
-                                    price.quantity <= 1
+                                    Number(quantity) <= 1
                                 }
                             >
                                 −
                             </button>
 
 
+                            {/* INPUT */}
+
                             <input
                                 type="number"
                                 min="1"
-                                value={price.quantity}
-                                disabled={quantityLoading}
+                                value={quantity}
                                 onChange={
                                     handleQuantityChange
                                 }
+                                onBlur={
+                                    handleQuantityBlur
+                                }
+                                disabled={quantityLoading}
                             />
 
+
+                            {/* INCREASE */}
 
                             <button
                                 type="button"
@@ -326,13 +419,15 @@ function PurchaseBook() {
                         </div>
 
 
-                        {quantityLoading && (
+                        {/* PRICE UPDATE STATUS */}
 
-                            <p className="quantity-updating">
-                                Updating price...
-                            </p>
+                        <div className="quantity-status">
+                                <p className="quantity-updating">
+                                    {quantityLoading ?
+                                        'Updating price...' : ''}
+                                </p>
 
-                        )}
+                        </div>
 
                     </div>
 
@@ -340,16 +435,15 @@ function PurchaseBook() {
                     <div className="purchase-divider" />
 
 
-                    {/* =========================
+                    {/* =================================================
                         BOOK INFORMATION
-                    ========================= */}
+                    ================================================= */}
 
                     <div className="purchase-section">
 
                         <h3>
                             Book Information
                         </h3>
-
 
                         <div className="purchase-info-grid">
 
@@ -398,9 +492,9 @@ function PurchaseBook() {
                 </div>
 
 
-                {/* =========================
+                {/* =================================================
                     RIGHT SUMMARY
-                ========================= */}
+                ================================================= */}
 
                 <div className="purchase-summary-card">
 
@@ -408,6 +502,8 @@ function PurchaseBook() {
                         Order Summary
                     </h2>
 
+
+                    {/* SUMMARY BOOK */}
 
                     <div className="purchase-summary-book">
 
@@ -439,6 +535,8 @@ function PurchaseBook() {
                     <div className="purchase-summary-divider" />
 
 
+                    {/* QUANTITY */}
+
                     <div className="purchase-summary-row">
 
                         <span>
@@ -452,6 +550,8 @@ function PurchaseBook() {
                     </div>
 
 
+                    {/* PRICE PER BOOK */}
+
                     <div className="purchase-summary-row">
 
                         <span>
@@ -459,7 +559,8 @@ function PurchaseBook() {
                         </span>
 
                         <strong>
-                            ₹{formatAmount(
+                            ₹
+                            {formatAmount(
                                 price.singleBookAmount
                             )}
                         </strong>
@@ -470,6 +571,8 @@ function PurchaseBook() {
                     <div className="purchase-summary-divider" />
 
 
+                    {/* TOTAL */}
+
                     <div className="purchase-total">
 
                         <span>
@@ -477,7 +580,8 @@ function PurchaseBook() {
                         </span>
 
                         <strong>
-                            ₹{formatAmount(
+                            ₹
+                            {formatAmount(
                                 price.amount
                             )}
                         </strong>
@@ -485,14 +589,22 @@ function PurchaseBook() {
                     </div>
 
 
+                    {/* CONFIRM */}
+
                     <button
                         className="confirm-purchase-btn"
-                        onClick={handleConfirmPurchase}
-                        disabled={quantityLoading}
+                        onClick={
+                            handleConfirmPurchase
+                        }
+                        disabled={
+                            quantityLoading
+                        }
                     >
                         Confirm Purchase
                     </button>
 
+
+                    {/* CANCEL */}
 
                     <button
                         className="cancel-purchase-btn"

@@ -1,0 +1,404 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.purchased-book-detail-page {
+    width: 100%;
+
+    padding: 40px 48px 60px;
+
+    box-sizing: border-box;
+
+    color: #1F2933;
+}
+
+
+/* =========================================================
+   BACK BUTTON
+========================================================= */
+
+.purchased-book-back-btn {
+    margin-bottom: 28px;
+
+    padding: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #173B4D;
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+}
+
+.purchased-book-back-btn:hover {
+    color: #0F2D3B;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.purchased-book-detail-header {
+    margin-bottom: 32px;
+}
+
+.purchased-book-detail-header > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.purchased-book-detail-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+.purchased-book-detail-header p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   MAIN CARD
+========================================================= */
+
+.purchased-book-detail-card {
+    width: 100%;
+
+    padding: 32px;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.04);
+}
+
+
+/* =========================================================
+   BOOK SUMMARY
+========================================================= */
+
+.purchased-book-summary {
+    display: grid;
+
+    grid-template-columns: 190px 1fr;
+
+    gap: 30px;
+
+    align-items: start;
+}
+
+
+/* =========================================================
+   COVER
+========================================================= */
+
+.purchased-book-cover-container {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: flex-start;
+}
+
+.purchased-book-cover {
+    width: 170px;
+
+    height: 240px;
+
+    object-fit: cover;
+
+    border-radius: 7px;
+
+    background: #F3F6F7;
+
+    box-shadow:
+        0 5px 15px rgba(23, 59, 77, 0.12);
+}
+
+
+/* =========================================================
+   BOOK INFO
+========================================================= */
+
+.purchased-book-summary-info {
+    padding-top: 4px;
+}
+
+.purchased-book-category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.7px;
+}
+
+.purchased-book-summary-info h2 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 28px;
+
+    line-height: 1.3;
+}
+
+.purchased-book-author {
+    margin: 0 0 22px;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+.purchased-book-description {
+    max-width: 900px;
+
+    margin: 0;
+
+    color: #5F6870;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.purchased-book-divider {
+    height: 1px;
+
+    margin: 30px 0;
+
+    background: #E5E1D8;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.purchased-book-section h3 {
+    margin: 0 0 16px;
+
+    color: #173B4D;
+
+    font-size: 17px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   INFORMATION GRID
+========================================================= */
+
+.purchased-book-info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 14px;
+}
+
+
+/* =========================================================
+   INFORMATION ITEM
+========================================================= */
+
+.purchased-book-info-item {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 7px;
+
+    min-height: 70px;
+
+    padding: 14px;
+
+    box-sizing: border-box;
+
+    background: #FBFAF7;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 7px;
+}
+
+.purchased-book-info-item span {
+    color: #8A9198;
+
+    font-size: 12px;
+}
+
+.purchased-book-info-item strong {
+    color: #1F2933;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    word-break: break-word;
+}
+
+
+/* =========================================================
+   PAYMENT
+========================================================= */
+
+.purchased-book-payment {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 22px 24px;
+
+    background: #F7F5F0;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 8px;
+}
+
+.purchased-book-payment span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #173B4D;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.purchased-book-payment p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+.purchased-book-payment > strong {
+    color: #173B4D;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.purchased-book-detail-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 750px) {
+
+    .purchased-book-detail-page {
+        padding: 30px 20px 40px;
+    }
+
+    .purchased-book-detail-card {
+        padding: 22px;
+    }
+
+    .purchased-book-summary {
+        grid-template-columns: 1fr;
+    }
+
+    .purchased-book-cover-container {
+        justify-content: flex-start;
+    }
+
+    .purchased-book-cover {
+        width: 140px;
+
+        height: 200px;
+    }
+
+    .purchased-book-summary-info h2 {
+        font-size: 23px;
+    }
+
+    .purchased-book-info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .purchased-book-payment {
+        align-items: flex-start;
+
+        gap: 20px;
+
+        flex-direction: column;
+    }
+
+    .purchased-book-payment > strong {
+        font-size: 21px;
+    }
+}

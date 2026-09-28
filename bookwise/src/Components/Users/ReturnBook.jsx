@@ -88,7 +88,7 @@ function ReturnBook() {
         try {
             const response = await returnBorrowBook(data)
             alert(response.data.message)
-            navigate("/borrow-books")
+            navigate("/my-books")
         } catch (error) {
             console.log("Failed to return book " + error)
         }
@@ -103,7 +103,7 @@ function ReturnBook() {
 
             <button
                 className="return-back-btn"
-                onClick={() => navigate("/borrow-books")}
+                onClick={() => navigate("/my-books")}
             >
                 ← Back to My Books
             </button>
@@ -458,7 +458,7 @@ function ReturnBook() {
 
                     <button
                         className="cancel-return-btn"
-                        onClick={() => navigate("/borrow-books")}
+                        onClick={() => navigate("/my-books")}
                     >
                         Cancel
                     </button>
