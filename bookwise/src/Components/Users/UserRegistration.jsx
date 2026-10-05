@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import Lookup from "../General/Templates/Lookup";
 import { registerUser } from "../../apiservice/users/userservice";
-import { fetchAllSubscriptionPlans } from "../../apiservice/subscriptions/SubscriptionService";
+import { fetchAllSubscriptionPlans } from "../../apiservice/subscriptions/Subscription";
 import "../../css/General/RegistrationForm.css";
 
 function UserRegistration() {

@@ -16,6 +16,17 @@ export function formatDateTime(dateTime) {
     );
  }
 
+export function formatPrice(price) {
+
+        return Number(price).toLocaleString(
+            "en-IN",
+            {
+                minimumFractionDigits: 0,
+                maximumFractionDigits: 2
+            }
+        );
+    }
+
  export function formatDate(dateTime) {
 
     if (!dateTime) {

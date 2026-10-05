@@ -27,6 +27,7 @@ import ReturnBook from './Users/ReturnBook';
 import BorrowBookDetail from './Users/BorrowBookDetail';
 import PurchaseBook from './Users/PurchaseBook';
 import PurchasedBookDetail from './Users/PurchasedBookDetail';
+import Subscription from './Users/Subscription';
 
 function BookWiseApp() {
     return <>
@@ -118,6 +119,14 @@ function BookWiseApp() {
                             <AuthorizationRoute
                                     allowedRoles={["USER"]}>
                                 <PurchasedBookDetail/>
+                            </AuthorizationRoute>
+                            }/>
+                        <Route
+                            path='/subscription'
+                            element={
+                            <AuthorizationRoute
+                                    allowedRoles={["USER"]}>
+                                <Subscription/>
                             </AuthorizationRoute>
                             }/>
 

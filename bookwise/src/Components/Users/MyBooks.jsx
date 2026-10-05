@@ -221,7 +221,7 @@ function MyBooks() {
                             View
                         </button>
 
-                        {status !== "RETURNED" && (
+                        {status !== "OVERDUE" && status !== "RETURNED" && (
                             <button
                                 className="my-return-btn"
                                 onClick={(event) => {
@@ -240,7 +240,7 @@ function MyBooks() {
                                     className="my-fine-btn"
                                     onClick={(event) => {
                                         event.stopPropagation();
-                                        handlePayFine(book);
+                                        handleReturn(book);
                                     }}
                                 >
                                     Pay Fine

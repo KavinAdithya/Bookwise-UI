@@ -1,0 +1,577 @@
+/* =========================================================
+   PAGE
+========================================================= */
+
+.subscription-page {
+    width: 100%;
+
+    padding: 40px 48px 60px;
+
+    box-sizing: border-box;
+
+    color: #1F2933;
+}
+
+
+/* =========================================================
+   PAGE HEADER
+========================================================= */
+
+.subscription-page-header {
+    margin-bottom: 34px;
+}
+
+.subscription-page-header > span {
+    display: block;
+
+    margin-bottom: 8px;
+
+    color: #D69E4A;
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.subscription-page-header h1 {
+    margin: 0 0 8px;
+
+    color: #173B4D;
+
+    font-size: 30px;
+
+    font-weight: 700;
+}
+
+.subscription-page-header p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   SECTION
+========================================================= */
+
+.current-plan-section,
+.available-plans-section {
+    width: 100%;
+}
+
+.available-plans-section {
+    margin-top: 42px;
+}
+
+
+/* =========================================================
+   SECTION HEADING
+========================================================= */
+
+.subscription-section-heading {
+    margin-bottom: 18px;
+}
+
+.subscription-section-heading h2 {
+    margin: 0 0 6px;
+
+    color: #173B4D;
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+.subscription-section-heading p {
+    margin: 0;
+
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   CURRENT PLAN CARD
+========================================================= */
+
+.current-plan-card {
+    width: 100%;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.05);
+}
+
+
+/* =========================================================
+   CURRENT PLAN HEADER
+========================================================= */
+
+.current-plan-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-start;
+
+    gap: 20px;
+}
+
+.current-plan-label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #D69E4A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+.current-plan-header h2 {
+    margin: 0 0 7px;
+
+    color: #173B4D;
+
+    font-size: 27px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   CURRENT PLAN PRICE
+========================================================= */
+
+.current-plan-price {
+    margin: 0;
+
+    color: #1F2933;
+
+    font-size: 20px;
+
+    font-weight: 600;
+}
+
+.current-plan-price span {
+    color: #6B7280;
+
+    font-size: 13px;
+
+    font-weight: 400;
+}
+
+
+/* =========================================================
+   ACTIVE BADGE
+========================================================= */
+
+.current-plan-badge {
+    display: inline-flex;
+
+    align-items: center;
+
+    padding: 6px 11px;
+
+    border-radius: 20px;
+
+    background: #E5F3EC;
+
+    color: #28734A;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   CURRENT PLAN DETAILS
+========================================================= */
+
+.current-plan-details {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 14px;
+
+    margin-top: 28px;
+
+    padding-top: 24px;
+
+    border-top: 1px solid #E5E1D8;
+}
+
+.current-plan-detail {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 6px;
+
+    padding: 14px;
+
+    background: #FBFAF7;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 7px;
+}
+
+.current-plan-detail span {
+    color: #8A9198;
+
+    font-size: 12px;
+}
+
+.current-plan-detail strong {
+    color: #1F2933;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   AVAILABLE PLANS GRID
+========================================================= */
+
+.subscription-plans-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 20px;
+
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PLAN CARD
+========================================================= */
+
+.subscription-plan-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-height: 310px;
+
+    padding: 26px;
+
+    box-sizing: border-box;
+
+    background: #FFFFFF;
+
+    border: 1px solid #E5E1D8;
+
+    border-radius: 9px;
+
+    box-shadow:
+        0 4px 14px rgba(23, 59, 77, 0.035);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+.subscription-plan-card:hover {
+    border-color: #CFC9BE;
+
+    box-shadow:
+        0 6px 18px rgba(23, 59, 77, 0.07);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   CURRENT PLAN CARD
+========================================================= */
+
+.subscription-plan-card.current {
+    border: 2px solid #173B4D;
+
+    box-shadow:
+        0 5px 18px rgba(23, 59, 77, 0.08);
+}
+
+.subscription-plan-card.current:hover {
+    transform: none;
+}
+
+
+/* =========================================================
+   PLAN HEADER
+========================================================= */
+
+.subscription-plan-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 25px;
+}
+
+.subscription-plan-name {
+    color: #173B4D;
+
+    font-size: 16px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.3px;
+}
+
+.subscription-plan-current {
+    padding: 4px 8px;
+
+    border-radius: 5px;
+
+    background: #E8EEF1;
+
+    color: #173B4D;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* =========================================================
+   PLAN PRICE
+========================================================= */
+
+.subscription-plan-price {
+    display: flex;
+
+    align-items: baseline;
+
+    gap: 5px;
+
+    margin-top: 24px;
+}
+
+.subscription-plan-price strong {
+    color: #173B4D;
+
+    font-size: 28px;
+
+    font-weight: 700;
+}
+
+.subscription-plan-price span {
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   PLAN DETAILS
+========================================================= */
+
+.subscription-plan-details {
+    margin-top: 25px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid #E5E1D8;
+}
+
+.subscription-plan-detail {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 9px 0;
+}
+
+.subscription-plan-detail span {
+    color: #6B7280;
+
+    font-size: 13px;
+}
+
+.subscription-plan-detail strong {
+    color: #1F2933;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   PLAN BUTTON
+========================================================= */
+
+.subscription-plan-btn {
+    width: 100%;
+
+    height: 43px;
+
+    margin-top: auto;
+
+    border-radius: 7px;
+
+    font-family: inherit;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+/* =========================================================
+   UPGRADE
+========================================================= */
+
+.upgrade-btn {
+    border: none;
+
+    background: #D69E4A;
+
+    color: #FFFFFF;
+}
+
+.upgrade-btn:hover {
+    background: #BD8536;
+
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   CURRENT
+========================================================= */
+
+.current-btn {
+    border: 1px solid #D9D5CC;
+
+    background: #F3F6F7;
+
+    color: #173B4D;
+
+    cursor: default;
+}
+
+
+/* =========================================================
+   UNAVAILABLE
+========================================================= */
+
+.unavailable-btn {
+    border: 1px solid #E5E1D8;
+
+    background: #F7F5F0;
+
+    color: #A0A0A0;
+
+    cursor: not-allowed;
+}
+
+
+/* =========================================================
+   LOADING
+========================================================= */
+
+.subscription-loading {
+    min-height: 400px;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    color: #6B7280;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .subscription-plans-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+    .current-plan-details {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .subscription-page {
+        padding: 30px 20px 40px;
+    }
+
+    .current-plan-card {
+        padding: 22px;
+    }
+
+    .current-plan-header {
+        flex-direction: column;
+    }
+
+    .current-plan-details {
+        grid-template-columns: 1fr;
+    }
+
+    .subscription-plans-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .subscription-plan-card {
+        min-height: 290px;
+    }
+}
