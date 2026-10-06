@@ -28,6 +28,7 @@ import BorrowBookDetail from './Users/BorrowBookDetail';
 import PurchaseBook from './Users/PurchaseBook';
 import PurchasedBookDetail from './Users/PurchasedBookDetail';
 import Subscription from './Users/Subscription';
+import SubscriptionUpgrade from './Users/SubscriptionUpgrade';
 
 function BookWiseApp() {
     return <>
@@ -130,6 +131,14 @@ function BookWiseApp() {
                             </AuthorizationRoute>
                             }/>
 
+                        <Route
+                            path='/subscription/upgrade/:subscriptionId'
+                            element={
+                            <AuthorizationRoute
+                                    allowedRoles={["USER"]}>
+                                <SubscriptionUpgrade/>
+                            </AuthorizationRoute>
+                            }/>
                         {/* Author Routes */}
                         <Route
                             path='/author/home'
