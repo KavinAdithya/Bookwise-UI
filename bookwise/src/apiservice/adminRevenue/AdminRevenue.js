@@ -9,3 +9,7 @@ export async function getAdminRevenueSummary(startDate, endDate, incomeType) {
         }
     });
 }
+
+export function getDashboardDetails() {
+    return apiClient.get('/admin/dashboard');
+}               

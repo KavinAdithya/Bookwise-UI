@@ -3,14 +3,16 @@ import '../../css/Admin/AdminHome.css';
 import { useNavigate } from 'react-router-dom';
 import {AuthContext} from '../General/Auth/AuthProvider'
 import { getAuthorByStatus } from '../../apiservice/authors/AuthorService';
+import { getDashboardDetails } from '../../apiservice/adminRevenue/AdminRevenue';
 
 function AdminHome() {
     const navigate = useNavigate();
     const {user} = useContext(AuthContext)
 
     const [authors, setAuthors] = useState([]);
-        
-    
+    const [dashboardDetails, setDashboardDetails] = useState();  
+
+
         useEffect(() => {
             async function fetchPendingAuthors() {
                 try {   
@@ -20,7 +22,17 @@ function AdminHome() {
                     console.error("Error fetching authors:", error);
                 }   
             }
+
+            async function fetchDashboardDetails() {
+                try {
+                    const response = await getDashboardDetails();
+                    setDashboardDetails(response.data.data);
+                } catch (error) {    
+                    console.error("Error fetching dashboard details:", error);
+                }
+            }
             fetchPendingAuthors();
+            fetchDashboardDetails();
         }, []);
     
     if (!authors)
@@ -51,25 +63,25 @@ function AdminHome() {
 
         <div className="stat-card">
             <span>👥</span>
-            <h2>1,245</h2>
+            <h2>{dashboardDetails?.totalUsers || 0}</h2>
             <p>Total Users</p>
         </div>
 
         <div className="stat-card">
             <span>✍️</span>
-            <h2>84</h2>
+            <h2>{dashboardDetails?.totalAuthors || 0}</h2>
             <p>Total Authors</p>
         </div>
 
         <div className="stat-card">
             <span>📚</span>
-            <h2>3,421</h2>
+            <h2>{dashboardDetails?.totalBooks || 0}</h2>
             <p>Total Books</p>
         </div>
 
         <div className="stat-card">
             <span>💰</span>
-            <h2>₹1,25,500</h2>
+            <h2>{dashboardDetails?.totalRevenue ? `₹${dashboardDetails.totalRevenue.toLocaleString()}` : '₹0'}</h2>
             <p>Total Revenue</p>
         </div>
 
@@ -154,25 +166,25 @@ function AdminHome() {
 
             <div>
                 <span>📚</span>
-                <h3>3,421</h3>
+                <h3>{dashboardDetails?.totalBooks || 0}</h3>
                 <p>Total Books</p>
             </div>
 
             <div>
                 <span>✅</span>
-                <h3>3,250</h3>
+                <h3>{dashboardDetails?.totalApprovedBooks || 0}</h3>
                 <p>Approved</p>
             </div>
 
             <div>
                 <span>⏳</span>
-                <h3>120</h3>
+                <h3>{dashboardDetails?.totalPendingBooks || 0}</h3>
                 <p>Pending</p>
             </div>
 
             <div>
                 <span>❌</span>
-                <h3>51</h3>
+                <h3>{dashboardDetails?.totalRejectedBooks || 0}</h3>
                 <p>Rejected</p>
             </div>
 
@@ -187,7 +199,7 @@ function AdminHome() {
         <div>
             <p>PLATFORM REVENUE</p>
 
-            <h2>₹1,25,500</h2>
+            <h2>{dashboardDetails?.totalRevenue ? `₹${dashboardDetails.totalRevenue.toLocaleString()}` : '₹0'}</h2>
 
             <p>
                 Monitor purchases, borrowing fees,
@@ -196,7 +208,7 @@ function AdminHome() {
         </div>
 
         <button
-            onClick={() => navigate("/admin/reports")}
+            onClick={() => navigate("/admin/revenue/summary")}
         >
             View Reports
         </button>
@@ -233,7 +245,7 @@ function AdminHome() {
             </button>
 
             <button
-                onClick={() => navigate("/admin/reports")}
+                onClick={() => navigate("/admin/revenue/summary")}
             >
                 <span>📊</span>
                 View Reports
