@@ -182,11 +182,11 @@ function Subscription() {
                         <div className="current-plan-detail">
 
                             <span>
-                                Duration
+                                Borrow Duration
                             </span>
 
                             <strong>
-                                {currentPlan.durationDays} days
+                                {currentPlan.borrowLimitDaysAllowed} days
                             </strong>
 
                         </div>
@@ -328,11 +328,11 @@ function Subscription() {
                                     <div className="subscription-plan-detail">
 
                                         <span>
-                                            Duration
+                                            Borrow Duration
                                         </span>
 
                                         <strong>
-                                            {plan.durationDays} days
+                                            {plan.borrowLimitDays} days
                                         </strong>
 
                                     </div>

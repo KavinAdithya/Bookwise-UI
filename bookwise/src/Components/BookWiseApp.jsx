@@ -29,6 +29,7 @@ import PurchaseBook from './Users/PurchaseBook';
 import PurchasedBookDetail from './Users/PurchasedBookDetail';
 import Subscription from './Users/Subscription';
 import SubscriptionUpgrade from './Users/SubscriptionUpgrade';
+import AdminRevenueDashboard from './Admin/AdminRevenueDashboard';
 
 function BookWiseApp() {
     return <>
@@ -232,6 +233,15 @@ function BookWiseApp() {
                                 <AuthorizationRoute
                                     allowedRoles={["ADMIN"]}>
                                     <AdminBookDetail/>
+                                </AuthorizationRoute>
+                            }/>
+
+                        <Route
+                            path='/admin/revenue/summary'
+                            element={ 
+                                <AuthorizationRoute
+                                    allowedRoles={["ADMIN"]}>
+                                    <AdminRevenueDashboard />
                                 </AuthorizationRoute>
                             }/>
 

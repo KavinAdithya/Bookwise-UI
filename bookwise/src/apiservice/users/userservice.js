@@ -17,11 +17,11 @@ export function getCurrentUserDetails() {
 }
 
 export function getAllUsers(filter) {
-    return apiClient.get("/users/admin", {params: {
+    return apiClient.get("/admin/users", {params: {
         "filterIsActive" : filter
     }})
 }
 
 export function getUserById(userId) {
-    return apiClient.get(`/users/admin/user/${userId}`)
+    return apiClient.get(`/admin/users/${userId}`)
 }

@@ -20,7 +20,8 @@ const navigation = {
         { label: "Home", path: "/admin/home"},
         { label: "Users", path: "/admin/users" },
         { label: "Authors", path: "/admin/authors" },
-        { label: "Books", path: "/admin/books"}
+        { label: "Books", path: "/admin/books"},
+        { label: "Revenue", path: "/admin/revenue/summary" }
     ]
 };
 
